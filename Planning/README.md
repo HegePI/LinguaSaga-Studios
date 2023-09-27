@@ -1,0 +1,1 @@
+This folder contains files related to the development of this project, such as development roadmap and component structure
