@@ -6,3 +6,5 @@ Contributors:
 
 - Heikki Pulli
 - Barunes Padhy
+- Ville Muilu
+- Maija Lantta
