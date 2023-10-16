@@ -1,5 +1,15 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
+import requests
+import json
+import os
+
+load_dotenv()
+
+API_URL = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-large"
+API_TOKEN = os.getenv("API_TOKEN")
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 app = FastAPI()
 
@@ -18,8 +28,17 @@ class Payload(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "Hello world"}
+    return {"version": "0.0.1"}
 
 @app.post("/conversation")
 def post_conversation(payload: Payload):
-    return {"response": payload.npc_name}
+    data = json.dumps({
+        "inputs": {
+            "text": payload.user_prompt
+        },
+        "options": {
+            "wait_for_model": True
+        }
+    })
+    response = requests.request("POST", API_URL, headers=headers, data=data)
+    return {"res": json.loads(response.content.decode("utf-8"))}

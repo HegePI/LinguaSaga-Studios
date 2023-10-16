@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "npc_name": "Heikki",
-  "user_prompt": "What is going on?",
+  "user_prompt": "Where I can find Mike?",
   "npc_data": {
     "backstory": "Kinda boring",
     "description": "Tall and wide",
