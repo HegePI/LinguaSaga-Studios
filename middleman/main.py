@@ -1,44 +1,45 @@
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from langchain import ConversationChain
 from pydantic import BaseModel
-import requests
-import json
-import os
+from langchain.llms import HuggingFaceHub
+from langchain.chains.conversation.memory import ConversationBufferMemory
+
 
 load_dotenv()
 
-API_URL = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-large"
-API_TOKEN = os.getenv("API_TOKEN")
-headers = {"Authorization": f"Bearer {API_TOKEN}"}
-
 app = FastAPI()
+
 
 class Task(BaseModel):
     description: str
+
 
 class Data(BaseModel):
     backstory: str
     description: str
     tasks: list[Task]
 
+
 class Payload(BaseModel):
     npc_name: str
     user_prompt: str
     npc_data: Data
 
+
 @app.get("/")
 def root():
     return {"version": "0.0.1"}
 
+
 @app.post("/conversation")
 def post_conversation(payload: Payload):
-    data = json.dumps({
-        "inputs": {
-            "text": payload.user_prompt
-        },
-        "options": {
-            "wait_for_model": True
-        }
-    })
-    response = requests.request("POST", API_URL, headers=headers, data=data)
-    return {"res": json.loads(response.content.decode("utf-8"))}
+    repo_id = "bigscience/bloom"
+    llm = HuggingFaceHub(
+        repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64}
+    )
+    conversation = ConversationChain(
+        llm=llm, verbose=True, memory=ConversationBufferMemory()
+    )
+
+    return {"response": conversation.predict(input=payload.user_prompt)}
