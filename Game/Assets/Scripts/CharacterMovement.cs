@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float speed = 5.0f; // Movement speed
-    private Animator animator; // Reference to the Animator component
+
+    //Attempt to implement basic collision? I dont know if this is optimal
+    private Vector3 lastInputDirection = Vector3.zero;
+    private bool canMove = true;
+    
+
+    public float speed = 5.0f;
+    private Animator animator;
 
     private void Start()
     {
@@ -17,21 +23,43 @@ public class CharacterMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, vertical, 0.0f);
-        
-        if(movement != Vector3.zero)
+        Vector3 currentInputDirection = new Vector3(horizontal, vertical, 0.0f);
+
+        //This is definitely not optimal
+        if (currentInputDirection != Vector3.zero && lastInputDirection != currentInputDirection)
         {
-            animator.SetBool("isMoving", true); // Play your movement animation
-            transform.Translate(movement * speed * Time.deltaTime);
+            canMove = true;
+        }
+
+        //Stored for collision check. Basically, if you have collided, dont move, unless the direction is different. I can already see logical issues with this, but this is a primitive implmentation
+        lastInputDirection = currentInputDirection;
+
+        if (canMove)
+        {
+            if (horizontal != 0 || vertical != 0)
+            {
+
+                //This "isMoving" detemines if the animation plays
+                animator.SetBool("isMoving", true);
+
+                //Actually move
+                transform.Translate(currentInputDirection * speed * Time.deltaTime);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
         }
         else
         {
-            animator.SetBool("isMoving", false); // Stop the movement animation or transition to an idle state
+            animator.SetBool("isMoving", false);
         }
     }
 
-    void OnTriggerEnter(Collider objectName)
+    //This is broken and as basic as it can get
+    private void OnTriggerEnter2D(Collider2D player)
     {
-        Debug.Log("Entered collision with " + objectName.gameObject.name);
+        canMove = false;
     }
+
 }
