@@ -2,9 +2,10 @@ POST http://127.0.0.1:8000/conversation HTTP/1.1
 Content-Type: application/json
 
 {
-  "npc_name": "Heikki",
-  "user_prompt": "Do you like football?",
+  "player_name": "player1",
+  "player_input": "Do you know where I can find the closest bar?",
   "npc_data": {
+    "npc_name": "Heikki",
     "backstory": "Kinda boring",
     "description": "Tall and wide",
     "tasks": [
