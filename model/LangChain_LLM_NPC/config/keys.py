@@ -1,0 +1,5 @@
+
+class Keys:
+    OPENAI_API_KEY = "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"
+    PINECONE_KEY = "f1edac4b-ec66-4999-8e04-2db6b4d41498"
+    HUGGINGFACEHUB_API_TOKEN = "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"
