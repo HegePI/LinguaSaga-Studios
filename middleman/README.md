@@ -28,3 +28,25 @@ uvicorn main:app --reload
 ```
 
 API endpoints are edited in the main.py file. API endpoints can be tested with vscode rest client extension (<https://marketplace.visualstudio.com/items?itemName=humao.rest-client>) by creating .rest files.
+
+## Chatbot
+
+Idea of the chatbot is to test development endpoints and model outputs without the need of running unity.
+
+1. activate virtual environment
+
+```bash
+source venv/bin/activate
+```
+
+2. Install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+3. start chatbot
+
+```bash
+streamlit run chatbot.py
+```
