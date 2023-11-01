@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from pydantic import BaseModel
-from langchain.llms import HuggingFaceHub
+from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.prompts import (
     MessagesPlaceholder,
@@ -10,7 +10,10 @@ from langchain.prompts import (
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema import SystemMessage
 from langchain.chains import LLMChain
+from langchain.chat_models import ChatOpenAI
 
+from middleman.ConnectionManager import ConnectionManager
+from middleman.ConversationManager import ConversationManager
 
 load_dotenv()
 
@@ -67,3 +70,16 @@ def post_conversation(payload: Payload):
             human_input=payload.player_input,
         )
     }
+
+
+connection_manager = ConnectionManager()
+
+
+@app.websocket("/ws/conversation")
+async def conversation(websocket: WebSocket):
+    await websocket.accept()
+    conversation_manager = ConversationManager(
+        websocket=websocket, connection_manager=connection_manager
+    )
+    while True:
+        conversation_manager.start_conversation()
