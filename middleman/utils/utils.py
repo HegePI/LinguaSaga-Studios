@@ -61,7 +61,7 @@ def save_chunks_into_vectorstore(content_chunks, embedding_model):
 def get_chat_chain(vector_store):
     # ① Get LLM model
     # llm = get_openai_model()
-    llm = get_huggingfacehub(model_name="google/flan-t5-xxl")
+    llm = get_huggingfacehub(model_name="mistralai/Mistral-7B-v0.1")
 
     # ② store the history
     # https://python.langchain.com/docs/use_cases/question_answering/how_to/chat_vector_db
@@ -69,7 +69,7 @@ def get_chat_chain(vector_store):
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     # ③ Dialog chain
     conversation_chain = ConversationalRetrievalChain.from_llm(
-        llm=llm, retriever=vector_store.as_retriever(), memory=memory
+        llm=llm, retriever=vector_store.as_retriever(), memory=memory, verbose=True
     )
     return conversation_chain
 
