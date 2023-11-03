@@ -1,0 +1,343 @@
+ Cyberpunk
+
+The snoozer went off at seven and I was out of my sleepsack, powered up, and on-line in nanos. That's as far as I got. Soon's I booted and got--
+
+CRACKERS/BUDDYBOO/8ER
+
+--on the tube I shut down fast. Damn! Rayno had been on line before me, like always, and that message meant somebody else had gotten into our Net-- and that meant trouble by the busload! I couldn't do anything more on term, so I zipped into my jumper, combed my hair, and went downstairs.
+
+Mom and Dad were at breakfast when I slid into the kitchen. "Good Morning, Mikey!" said Mom with a smile. "You were up so late last night I thought I wouldn't see you before you caught your bus."
+
+"Had a tough program to crack," I said.
+
+"Well," she said, "now you can sit down and have a decent breakfast." She turned around to pull some Sara Lees out of the microwave and plunk them down on the table.
+
+"If you'd do your schoolwork when you're supposed to you wouldn't have to stay up all night," growled Dad from behind his caffix and faxsheet. I sloshed some juice in a glass and poured it down, stuffed a Sara Lee into my mouth, and stood to go.
+
+"What?" asked Mom. "That's all the breakfast you're going to have?"
+
+"Haven't got time," I said. "I gotta get to school early to see if the program checks." Dad growled something more and Mom spoke to quiet him, but I didn't hear much 'cause I was out the door.
+
+I caught the transys for school, just in case they were watching. Two blocks down the line I got off and transferred going back the other way, and a coupla transfers later I wound up whipping into Buddy's All-Night Burgers. Rayno was in our booth, glaring into his caffix. It was 7:55 and I'd beat Georgie and Lisa there.
+
+"What's on line?" I asked as I dropped into my seat, across from Rayno. He just looked up at me through his eyebrows and I knew better than to ask again.
+
+At eight Lisa came in. Lisa is Rayno's girl, or at least she hopes she is. I can see why: Rayno's seventeen--two years older than the rest of us--he wears flash plastic and his hair in The Wedge (Dad blew a chip when I said I wanted my hair cut like that) and he's so cool he won't even touch her, even when she's begging for it. She plunked down in her seat next to Rayno and he didn't blink.
+
+Georgie still wasn't there at 8:05. Rayno checked his watch again, then finally looked up from his caffix. "The compiler's been cracked," he said. Lisa and I both swore. We'd worked up our own little code to keep our Net private. I mean, our Olders would just blow boards if they ever found out what we were really up to. And now somebody'd broken our code.
+
+"Georgie's old man?" I asked.
+
+"Looks that way." I swore again. Georgie and I started the Net by linking our smartterms with some stuff we stored in his old man's home business system. Now my Dad wouldn't know an opsys if he crashed on one, but Georgie's old man--he's a greentooth. A tech-type. He'd found one of ours once before and tried to take it apart to see what it did. We'd just skinned out that time.
+
+"Any idea how far in he got?" Lisa asked. Rayno looked through her, at the front door. Georgie'd just come in.
+
+"We're gonna find out," Rayno said.
+
+Georgie was coming in smiling, but when he saw that look in Rayno's eyes he sat down next to me like the seat was booby-trapped.
+
+"Good morning Georgie," said Rayno, smiling like a shark.
+
+"I didn't glitch!" Georgie whined. "I didn't tell him a thing!"
+
+"Then how the Hell did he do it?"
+
+"You know how he is, he's weird! He likes puzzles!" Georgie looked to me for backup. "That's how come I was late. He was trying to weasel me, but I didn't tell him a thing! I think he only got it partway open. He didn't ask about the Net!"
+
+Rayno actually sat back, pointed at us all, and smiled. "You kids just don't know how lucky you are. I was in the Net last night and flagged somebody who didn't know the secures was poking Georgie's compiler. I made some changes. By the time your old man figures them out, well..."
+
+I sighed relief. See what I mean about being cool? Rayno had us outlooped all the time!
+
+Rayno slammed his fist down on the table. "But Dammit Georgie, you gotta keep a closer watch on him!"
+
+Then Rayno smiled and bought us all drinks and pie all the way around. Lisa had a cherry Coke, and Georgie and I had caffix just like Rayno. God, that stuff tastes awful! The cups were cleared away, and Rayno unzipped his jumper and reached inside.
+
+"Now kids," he said quietly, "it's time for some serious fun." He whipped out his microterm. "School's off!"
+
+I still drop a bit when I see that microterm--Geez, it's a beauty! It's a Zeilemann Nova 300, but we've spent so much time reworking it, it's practically custom from the motherboard up. Hi-baud, rammed, rammed, ported, with the wafer display folds down to about the size of a vid casette; I'd give an ear to have one like it. We'd used Georgie's old man's chipburner to tuck some special tricks in ROM and there wasn't a system in CityNet it couldn't talk to.
+
+Rayno ordered up a smartcab and we piled out of Buddy's. No more riding the transys for us, we were going in style! We charged the smartcab off to some law company and cruised all over Eastside.
+
+Riding the boulevards got stale after awhile, so we rerouted to the library. We do a lot of our fun at the library, 'cause nobody ever bothers us there. Nobody ever goes there. We sent the smartcab, still on the law company account, off to Westside. Getting past the guards and the librarians was just a matter of flashing some ID and then we zipped off into the stacks.
+
+Now, you've got to ID away your life to get on the libsys terms--which isn't worth half a scare when your ID is all fudged like ours is--and they watch real careful. But they move their terms around a lot, so they've got ports on line all over the building. We found an unused port, and me and Georgie kept watch while Rayno plugged in his microterm and got on line.
+
+"Get me into the Net," he said, handing me the term. We don't have a stored opsys yet for Netting, so Rayno gives me the fast and tricky jobs.
+
+Through the dataphones I got us out of the libsys and into CityNet. Now, Olders will never understand. They still think a computer has got to be a brain in a single box. I can get the same results with opsys stored in a hundred places, once I tie them together. Nearly every computer has got a dataphone port, CityNet is a great linking system, and Rayno's microterm has the smarts to do the job clean and fast so nobody flags on us. I pulled the compiler out of Georgie's old man's computer and got into our Net. Then I handed the term back to Rayno.
+
+"Well, let's do some fun. Any requests?" Georgie wanted something to get even with his old man, and I had a new routine cooking, but Lisa's eyes lit up 'cause Rayno handed the term to her, first.
+
+"I wanna burn Lewis," she said.
+
+"Oh fritz!" Georgie complained. "You did that last week!"
+
+"Well, he gave me another F on a theme."
+
+"I never get F's. If you'd read books once in a--"
+
+"Georgie," Rayno said softly, "Lisa's on line." That settled that. Lisa's eyes were absolutely glowing.
+
+Lisa got back into CityNet and charged a couple hundred overdue books to Lewis's libsys account. Then she ordered a complete fax sheet of Encyclopedia Britannica printed out at his office. I got next turn.
+
+Georgie and Lisa kept watch while I accessed. Rayno was looking over my shoulder. "Something new this week?"
+
+"Airline reservations. I was with my Dad two weeks ago when he set up a business trip, and I flagged on maybe getting some fun. I scanned the ticket clerk real careful and picked up the access code."
+
+"Okay, show me what you can do."
+
+Accessing was so easy that I just wiped a couple of reservations first, to see if there were any bells and whistles.
+
+None. No checks, no lockwords, no confirm codes. I erased a couple dozen people without crashing down or locking up. "Geez," I said, "There's no deep secures at all!"
+
+"I been telling you. Olders are even dumber than they look. Georgie? Lisa? C'mon over here and see what we're running!"
+
+Georgie was real curious and asked a lot of questions, but Lisa just looked bored and snapped her gum and tried to stand closer to Rayno. Then Rayno said, "Time to get off Sesame Street. Purge a flight."
+
+I did. It was simple as a save. I punched a few keys, entered, and an entire plane disappeared from all the reservation files. Boy, they'd be surprised when they showed up at the airport. I started purging down the line, but Rayno interrupted.
+
+"Maybe there's no bells and whistles, but wipe out a whole block of flights and it'll stand out. Watch this." He took the term from me and cooked up a routine in RAM to do a global and wipe out every flight that departed at an :07 for the next year. "Now that's how you do these things without waving a flag."
+
+"That's sharp," Georgie chipped in, to me. "Mike, you're a genius! Where do you get these ideas?" Rayno got a real funny look in his eyes.
+
+"My turn," Rayno said, exiting the airline system.
+
+"What's next in the stack?" Lisa asked him.
+
+"Yeah, I mean, after garbaging the airlines . . ." Georgie didn't realize he was supposed to shut up.
+
+"Georgie! Mike!" Rayno hissed. "Keep watch!" Soft, he added, "It's time for The Big One."
+
+"You sure?" I asked. "Rayno, I don't think we're ready."
+
+"We're ready."
+
+Georgie got whiney. "We're gonna get in big trouble--"
+
+"Wimp," spat Rayno. Georgie shut up.
+
+We'd been working on The Big One for over two months, but I still didn't feel real solid about it. It almost made a clean if/then/else; if The Big One worked/then we'd be rich/else . . . it was the else I didn't have down.
+
+Georgie and me scanned while Rayno got down to business. He got back into CityNet, called the cracker opsys out of OurNet, and poked it into Merchant's Bank & Trust. I'd gotten into them the hard way, but never messed with their accounts; just did it to see if I could do it. My data'd been sitting in their system for about three weeks now and nobody'd noticed. Rayno thought it would be really funny to use one bank computer to crack the secures on other bank computers.
+
+While he was peeking and poking I heard walking nearby and took a closer look. It was just some old waster looking for a quiet place to sleep. Rayno was finished linking by the time I got back. "Okay kids," he said, "this is it." He looked around to make sure we were all watching him, then held up the term and stabbed the RETURN key. That was it. I stared hard at the display, waiting to see what else was gonna be. Rayno figured it'd take about ninety seconds.
+
+The Big One, y'see, was Rayno's idea. He'd heard about some kids in Sherman Oaks who almost got away with a five million dollar electronic fund transfer; they hadn't hit a hangup moving the five mil around until they tried to dump it into a personal savings account with a $40 balance. That's when all the flags went up.
+
+Rayno's cool; Rayno's smart. We weren't going to be greedy, we were just going to EFT fifty K. And it wasn't going to look real strange, 'cause it got strained through some legitimate accounts before we used it to open twenty dummies.
+
+If it worked.
+
+The display blanked, flickered, and showed:
+
+TRANSACTION COMPLETED. HAVE A NICE DAY.
+
+I started to shout, but remembered I was in a library. Georgie looked less terrified. Lisa looked like she was going to attack Rayno.
+
+Rayno just cracked his little half smile, and started exiting. "Funtime's over, kids."
+
+"I didn't get a turn," Georgie mumbled.
+
+Rayno was out of all the nets and powering down. He turned, slow, and looked at Georgie through those eyebrows of his. "You are still on The List."
+
+Georgie swallowed it 'cause there was nothing else he could do. Rayno folded up the microterm and tucked it back inside his jumper.
+
+We got a smartcab outside the library and went off to someplace Lisa picked for lunch. Georgie got this idea about garbaging up the smartcab's brain so that the next customer would have a real state fair ride, but Rayno wouldn't let him do it. Rayno didn't talk to him during lunch, either.
+
+After lunch I talked them into heading up to Martin's Micros. That's one of my favorite places to hang out. Martin's the only Older I know who can really work a computer without blowing out his headchips, and he never talks down to me, and he never tells me to keep my hands off anything. In fact, Martin's been real happy to see all of us, ever since Rayno bought that $3000 vidgraphics art animation package for Lisa's birthday.
+
+Martin was sitting at his term when we came in. "Oh, hi Mike! Rayno! Lisa! Georgie!" We all nodded. "Nice to see you again. What can I do for you today?"
+
+"Just looking," Rayno said.
+
+"Well, that's free." Martin turned back to his term and punched a few more IN keys. "Damn!" he said to the term.
+
+"What's the problem?" Lisa asked.
+
+"The problem is me," Martin said. "I got this software package I'm supposed to be writing, but it keeps bombing out and I don't know what's wrong."
+
+Rayno asked, "What's it supposed to do?"
+
+"Oh, it's a real estate system. Y'know, the whole future-values-in-current-dollars bit. Depreciation, inflation, amortization, tax credits--"
+
+"Put that in our tang," Rayno said. "What numbers crunch?"
+
+Martin started to explain, and Rayno said to me, "This looks like your kind of work." Martin hauled his three hundred pounds of fat out of the chair, and looked relieved as I dropped down in front of the term. I scanned the parameters, looked over Martin's program, and processed a bit. Martin'd only made a few mistakes. Anybody could have. I dumped Martin's program and started loading the right one in off the top of my head.
+
+"Will you look at that?" Martin said.
+
+I didn't answer 'cause I was thinking in assembly. In ten minutes I had it in, compiled, and running test sets. It worked perfect, of course.
+
+"I just can't believe you kids," Martin said. "You can program easier than I can talk."
+
+"Nothing to it," I said.
+
+"Maybe not for you. I knew a kid grew up speaking Arabic, used to say the same thing." He shook his head, tugged his beard, looked me in the face, and smiled. "Anyhow, thanks loads, Mike. I don't know how to . . ." He snapped his fingers. "Say, I just got something in the other day, I bet you'd be really interested in." He took me over to the display case, pulled it out, and set it on the counter. "The latest word in microterms. The Zeilemann Starfire 600."
+
+I dropped a bit! Then I ballsed up enough to touch it. I flipped up the wafer display, ran my fingers over the touch pads, and I just wanted it so bad! "It's smart," Martin said. "Rammed, rammed, and ported."
+
+Rayno was looking at the specs with that cold look in his eye. "My 300 is still faster," he said.
+
+"It should be," Martin said. "You customized it half to death. But the 600 is nearly as fast, and it's stock, and it lists for $1400. I figure you must have spent nearly 3K upgrading yours."
+
+"Can I try it out?" I asked. Martin plugged me into his system, and I booted and got on line. It worked great! Quiet, accurate; so maybe it wasn't as fast as Rayno's--I couldn't tell the difference. "Rayno, this thing is the max!" I looked at Martin. "Can we work out some kind of. . . ?" Martin looked back to his terminal, where the real estate program was still running tests without a glitch.
+
+"I been thinking about that, Mike. You're a minor, so I can't legally employ you." He tugged on his beard and rolled his tongue around his mouth. "But I'm hitting that real estate client for some pretty heavy bread on consulting fees, and it doesn't seem real fair to me that you . . . Tell you what. Maybe I can't hire you, but I sure can buy software you write. You be my consultant on, oh . . . seven more projects like this, and we'll call it a deal? Sound okay to you?"
+
+Before I could shout yes, Rayno pushed in between me and Martin. "I'll buy it. List." He pulled out a charge card from his jumper pocket. Martin's jaw dropped. "Well, what're you waiting for? My plastic's good."
+
+"List? But I owe Mike one," Martin protested.
+
+"List. You don't owe us nothing."
+
+Martin swallowed. "Okay Rayno." He took the card and ran a credcheck on it. "It's clean," Martin said, surprised. He punched up the sale and started laughing. "I don't know where you kids get this kind of money!"
+
+"We rob banks," Rayno said. Martin laughed, and Rayno laughed, and we all laughed. Rayno picked up the term and walked out of the store. As soon as we got outside he handed it to me.
+
+"Thanks Rayno, but . . . but I coulda made the deal myself."
+
+"Happy Birthday, Mike."
+
+"Rayno, my birthday is in August."
+
+"Let's get one thing straight. You work for me."
+
+It was near school endtime, so we routed back to Buddy's. On the way, in the smartcab, Georgie took my Starfire, gently opened the case, and scanned the boards. "We could double the baud speed real easy."
+
+"Leave it stock," Rayno said.
+
+We split up at Buddy's, and I took the transys home. I was lucky, 'cause Mom and Dad weren't home and I could zip right upstairs and hide the Starfire in my closet. I wish I had cool parents like Rayno does. They never ask him any dumb questions.
+
+Mom came home at her usual time, and asked how school was. I didn't have to say much, 'cause just then the stove said dinner was ready and she started setting the table. Dad came in five minutes later and we started eating.
+
+We got the phone call halfway through dinner. I was the one who jumped up and answered it. It was Georgie's old man, and he wanted to talk to my Dad. I gave him the phone and tried to overhear, but he took it in the next room and talked real quiet. I got unhungry. I never liked tofu, anyway.
+
+Dad didn't stay quiet for long. "He what?! Well thank you for telling me! I'm going to get to the bottom of this right now!" He hung up.
+
+"Who was that, David?" Mom asked.
+
+"That was Mr. Hansen. Georgie's father. Mike and Georgie were hanging around with that punk Rayno again!" He snapped around to look at me. I'd almost made it out the kitchen door. "Michael! Were you in school today?"
+
+I tried to talk cool. I think the tofu had my throat all clogged up. "Yeah...yeah, I was."
+
+"Then how come Mr. Hansen saw you coming out of the downtown library?"
+
+I was stuck. "I--I was down there doing some special research."
+
+"For what class? C'mon Michael, what were you studying?"
+
+It was too many inputs. I was locking up.
+
+"David," Mom said, "Aren't you being a bit hasty? I'm sure there's a good explanation."
+
+"Martha, Mr. Hansen found something in his computer that Georgie and Michael put there. He thinks they've been messing with banks."
+
+"Our Mikey? It must be some kind of bad joke."
+
+"You don't know how serious this is! Michael Arthur Harris! What have you been doing sitting up all night with that terminal? What was that system in Hansen's computer? Answer me! What have you been doing?!"
+
+My eyes felt hot. "None of your business! Keep your nose out of things you'll never understand, you obsolete old relic!"
+
+"That does it! I don't know what's wrong with you damn kids, but I know that thing isn't helping!" He stormed up to my room. I tried to get ahead of him all the way up the steps and just got my hands stepped on. Mom came fluttering up behind as he yanked all the plugs on my terminal.
+
+"Now David," Mom said. "Don't you think you're being a bit harsh? He needs that for his homework, don't you, Mikey?"
+
+"You can't make excuses for him this time, Martha! I mean it! This goes in the basement, and tomorrow I'm calling the cable company and getting his line ripped out! If he has anything to do on computer he can damn well use the terminal in the den, where I can watch him!" He stomped out, carrying my smartterm. I slammed the door and locked it. "Go ahead and sulk! It won't do you any good!"
+
+I threw some pillows around 'til I didn't feel like breaking anything anymore, then I hauled the Starfire out of the closet. I'd watched over Dad's shoulders enough to know his account numbers and access codes, so I got on line and got down to business. I was finished in half an hour.
+
+I tied into Dad's terminal. He was using it, like I figured he would be, scanning school records. Fine. He wouldn't find out anything; we'd figured out how to fix school records months ago. I crashed in and gave him a new message on his vid display.
+
+"Dad," it said, "there's going to be some changes around here."
+
+It took a few seconds to sink in. I got up and made sure the door was locked real solid. I still got half a scare when he came pounding up the stairs, though. I didn't know he could be so loud.
+
+"MICHAEL!!" He slammed into the door. "Open this! Now!"
+
+"No."
+
+"If you don't open this door before I count to ten, I'm going to bust it down! One!"
+
+"Before you do that--"
+
+"Two!"
+
+"Better call your bank!"
+
+"Three!"
+
+"B320-5127-OlR." That was his checking account access code. He silenced a couple seconds.
+
+"Young man, I don't know what you think you're trying to pull--"
+
+"I'm not trying anything. I did it already."
+
+Mom came up the stairs and said, "What's going on, David?"
+
+"Shut up, Martha!" He was talking real quiet, now. "What did you do, Michael?"
+
+"Outlooped you. Disappeared you. Buried you."
+
+"You mean, you got into the bank computer and erased my checking account?"
+
+"Savings and mortgage on the condo, too."
+
+"Oh my God . . ."
+
+Mom said, "He's just angry, David. Give him time to cool off. Mikey, you wouldn't really do that, would you?"
+
+"Then I accessed DynaRand," I said. "Wiped your job. Your pension. I got into your plastic, too."
+
+"He couldn't have, David. Could he?"
+
+"Michael!" He hit the door. "I'm going to wring your scrawny neck!"
+
+"Wait!" I shouted back. "I copied all your files before I purged! There's a way to recover!"
+
+He let up hammering on the door, and struggled to talk calm. "Give me the copies right now and I'll just forget that this happened."
+
+"I can't. I mean, I did backups in other computers. And I secured the files and hid them where only I know how to access."
+
+There was quiet. No, in a nano I realised it wasn't quiet, it was Mom and Dad talking real soft. I eared up to the door but all I caught was Mom saying 'why not?' and Dad saying, 'but what if he is telling the truth?'
+
+"Okay Michael," Dad said at last. "What do you want?"
+
+I locked up. It was an embarrasser; what did I want? I hadn't thought that far ahead. Me, caught without a program! I dropped half a laugh, then tried to think. I mean, there was nothing they could get me I couldn't get myself, or with Rayno's help. Rayno! I wanted to get in touch with him, is what I wanted. I'd pulled this whole thing off without Rayno!
+
+I decided then it'd probably be better if my Olders didn't know about the Starfire, so I told Dad first thing I wanted was my smartterm back. It took a long time for him to clump down to the basement and get it. He stopped at his term in the den, first, to scan if I'd really purged him. He was real subdued when he brought my smartterm back up.
+
+I kept processing, but by the time he got back I still hadn't come up with anything more than I wanted them to leave me alone and stop telling me what to do. I got the smartterm into my room without being pulped, locked the door, got on line, and gave Dad his job back. Then I tried to flag Rayno and Georgie, but couldn't, so I left messages for when they booted. I stayed up half the night playing a war, just to make sure Dad didn't try anything.
+
+I booted and scanned first thing the next morning, but Rayno and Georgie still hadn't come on. So I went down and had an utter silent breakfast and sent Mom and Dad off to work. I offed school and spent the whole day finishing the war and working on some tricks and treats programs. We had another utter silent meal when Mom and Dad came home, and after supper I flagged Rayno had been in the Net and left a remark on when to find him.
+
+I finally got him on line around eight, and he said Georgie was getting trashed and probably heading for permanent downtime.
+
+Then I told Rayno all about how I outlooped my old man, but he didn't seem real buzzed about it. He said he had something cooking and couldn't meet me at Buddy's that night to talk about it, either. So we got off line, and I started another war and then went to sleep.
+
+The snoozer said 5:25 when I woke up, and I couldn't logic how come I was awake 'til I started making sense out of my ears. Dad was taking apart the hinges on my door!
+
+"Dad! You cut that out or I'll purge you clean! There won't be backups this time!"
+
+"Try it," he growled.
+
+I jumped out of my sleepsack, powered up, booted and--no boot. I tried again. I could get on line in my smartterm, but I couldn't port out. "I cut your cable down in the basement," he said.
+
+I grabbed the Starfire out of my closet and zipped it inside my jumper, but before I could do the window, the door and Dad both fell in. Mom came in right behind, popped open my dresser, and started stuffing socks and underwear in a suitcase.
+
+"Now you're fritzed!" I told Dad. "I'll never give you back your files!" He grabbed my arm.
+
+"Michael, there's something I think you should see." He dragged me down to his den and pulled some bundles of old paper trash out of his desk. "These are receipts. This is what obsolete old relics like me use because we don't trust computer bookkeeping. I checked with work and the bank; everything that goes on in the computer has to be verified with paper. You can't change anything for more than 24 hours."
+
+"Twenty-four hours? " I laughed. "Then you're still fritzed! I can still wipe you out any day, from any term in CityNet'"
+
+"I know."
+
+Mom came into the den, carrying the suitcase and kleenexing her eyes. "Mikey, you've got to understand that we love you, and this is for your own good." They dragged me down to the airport and stuffed me in a private lear with a bunch of old gestapos.
+
+I've had a few weeks now to get used to the Von Schlager Military Academy. They tell me I'm a bright kid and with good behavior, there's really no reason at all why I shouldn't graduate in five years. I am getting tired, though, of all the older cadets telling me how soft I've got it now that they've installed indoor plumbing.
+
+Of course, I'm free to walk out any time I want. It's only three hundred miles to Fort McKenzie, where the road ends.
+
+Sometimes at night, after lights out, I'll pull out my Starfire and run my fingers over the touchpads. That's all I can do, since they turn off power in the barracks at night. I'll lie there in the dark, thinking about Lisa, and Georgie, and Buddy's All-Night Burgers, and all the fun we used to pull off. But mostly I'll think about Rayno, and what great plans he cooks up.
+
+I can't wait to see how he gets me out of this one. 
