@@ -57,6 +57,10 @@ class HuggingfaceConversationalRetrievalModel:
         self.vector_store = save_chunks_into_vectorstore(chunks, self.embedding)
         return self
 
+    def predict(self, query, history):
+        # Needs to be implemented
+        pass
+
 
 def get_openai_model():
     llm_model = ChatOpenAI()
