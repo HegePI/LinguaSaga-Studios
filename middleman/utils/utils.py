@@ -1,12 +1,13 @@
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.vectorstores import FAISS, Milvus, Pinecone, Chroma
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationalRetrievalChain
-from models.llm_model import get_openai_model, get_huggingfacehub
+from langchain.vectorstores import FAISS
+
+from models.llm_model import (
+    HugginfaceInferenceClientCustomLLM,
+    HuggingfaceConversationalRetrievalModel,
+)
 import streamlit as st
 from config.templates import bot_template, user_template
 from PyPDF2 import PdfReader
-import pinecone
 
 
 def extract_text_from_PDF(files):
@@ -58,36 +59,33 @@ def save_chunks_into_vectorstore(content_chunks, embedding_model):
     return vectorstore
 
 
-def get_chat_chain(vector_store):
-    # ① Get LLM model
-    # llm = get_openai_model()
-    llm = get_huggingfacehub(model_name="mistralai/Mistral-7B-v0.1")
-
-    # ② store the history
-    # https://python.langchain.com/docs/use_cases/question_answering/how_to/chat_vector_db
-    # store the chat history
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    # ③ Dialog chain
-    conversation_chain = ConversationalRetrievalChain.from_llm(
-        llm=llm, retriever=vector_store.as_retriever(), memory=memory, verbose=True
-    )
-    return conversation_chain
+def get_huggingface_conversational_retrieval_chain(vector_store):
+    llm = HugginfaceInferenceClientCustomLLM()
+    return HuggingfaceConversationalRetrievalModel(
+        retriever=vector_store.as_retriever(), llm=llm
+    ).get_conversational_retrieval_chain()
 
 
 def process_user_input(user_input):
+    print("process_user_input", user_input)
     if st.session_state.conversation is not None:
-        response = st.session_state.conversation({"question": user_input})
+        response = st.session_state.conversation(
+            {"question": user_input, "chat_history": ""}
+        )
+
+        print(response)
 
         st.session_state.chat_history = response["chat_history"]
 
         for i, message in enumerate(st.session_state.chat_history):
+            print(message["answer"])
             if i % 2 == 0:
                 st.write(
-                    user_template.replace("{{MSG}}", message.content),
+                    user_template.replace("{{MSG}}", message["answer"]),
                     unsafe_allow_html=True,
                 )
             else:
                 st.write(
-                    bot_template.replace("{{MSG}}", message.content),
+                    bot_template.replace("{{MSG}}", message["answer"]),
                     unsafe_allow_html=True,
                 )

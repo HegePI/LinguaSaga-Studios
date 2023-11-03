@@ -1,8 +1,11 @@
 import streamlit as st
 from utils.utils import extract_text_from_PDF, split_content_into_chunks
-from utils.utils import save_chunks_into_vectorstore, get_chat_chain, process_user_input
+from utils.utils import (
+    save_chunks_into_vectorstore,
+    get_huggingface_conversational_retrieval_chain,
+    process_user_input,
+)
 from models.embedding_model import (
-    get_openaiEmbedding_model,
     get_huggingfaceEmbedding_model,
 )
 from dotenv import load_dotenv
@@ -51,7 +54,9 @@ def main():
                 )
 
                 # 7. create the chain
-                st.session_state.conversation = get_chat_chain(vector_store)
+                st.session_state.conversation = (
+                    get_huggingface_conversational_retrieval_chain(vector_store)
+                )
 
 
 if __name__ == "__main__":

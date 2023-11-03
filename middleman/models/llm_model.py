@@ -1,65 +1,53 @@
-from typing import Dict, Any
 from langchain.chat_models import ChatOpenAI
-from langchain.llms import HuggingFaceHub
+from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationalRetrievalChain
-from langchain.vectorstores.faiss import FAISS
-from langchain.embeddings import HuggingFaceInstructEmbeddings
+from langchain.chains import ConversationalRetrievalChain, StuffDocumentsChain
+from langchain.schema.retriever import BaseRetriever
+from langchain.prompts import PromptTemplate
+from langchain.llms.base import LLM
+from langchain.callbacks.manager import CallbackManagerForLLMRun
 
-from middleman.utils.utils import (
-    extract_text_from_PDF,
-    save_chunks_into_vectorstore,
-    split_content_into_chunks,
-)
+from huggingface_hub import InferenceClient
+
+from typing import Optional, List, Any
 
 
 class HuggingfaceConversationalRetrievalModel:
-    repo_id: str
-    model_kwargs: Dict
     llm: HuggingFaceHub
     memory: ConversationBufferMemory
-    chain: ConversationalRetrievalChain
-    vector_store: FAISS
-    embedding: HuggingFaceInstructEmbeddings
-    files: Any
+    llm_chain: ConversationalRetrievalChain
+    llm_chain_prompt: PromptTemplate
+    doc_chain: StuffDocumentsChain
+    doc_chain_prompt: PromptTemplate
+    doc_variable_name: str
+    retriever: BaseRetriever
+    conversational_retrieval_chain: ConversationalRetrievalChain
 
-    def __init__(self, model_kwargs, repo_id="mistralai/Mistral-7B-v0.1") -> None:
-        self.repo_id = repo_id
-        self.model_kwargs = model_kwargs
-        self.embedding = HuggingFaceInstructEmbeddings()
-
-    def set_files(self, files):
-        self.files = files
-        return self
-
-    def set_llm(self):
-        self.llm = HuggingFaceHub(repo_id=self.repo_id, model_kwargs=self.model_kwargs)
-        return self
-
-    def set_conversation_buffer_memory(self):
-        self.memory = ConversationBufferMemory(
-            memory_key="chat_history", return_messages=True
+    def __init__(
+        self,
+        retriever: BaseRetriever,
+        model_kwargs=None,
+        repo_id="mistralai/Mistral-7B-v0.1",
+        llm: None | LLM = None,
+    ) -> None:
+        # self.memory = ConversationBufferMemory()
+        self.llm = HuggingFaceHub(
+            repo_id=repo_id,
+            model_kwargs=model_kwargs,
         )
-        return self
 
-    def set_chain(self):
-        self.chain = ConversationalRetrievalChain.from_llm(
+        if llm is not None:
+            self.llm = llm
+
+        self.retriever = retriever
+        self.conversational_retrieval_chain = ConversationalRetrievalChain.from_llm(
             llm=self.llm,
-            retriever=self.vector_store.as_retriever(),
-            memory=self.memory,
+            retriever=self.retriever,
             verbose=True,
         )
-        return self
 
-    def set_vector_store(self):
-        text = extract_text_from_PDF(files=self.files)
-        chunks = split_content_into_chunks(text)
-        self.vector_store = save_chunks_into_vectorstore(chunks, self.embedding)
-        return self
-
-    def predict(self, query, history):
-        # Needs to be implemented
-        pass
+    def get_conversational_retrieval_chain(self):
+        return self.conversational_retrieval_chain
 
 
 def get_openai_model():
@@ -70,3 +58,26 @@ def get_openai_model():
 def get_huggingfacehub(model_name=None):
     llm_model = HuggingFaceHub(repo_id=model_name)
     return llm_model
+
+
+class HugginfaceInferenceClientCustomLLM(LLM):
+    inference_client: InferenceClient = None
+    model: str = None
+
+    def __init__(self, model="facebook/blenderbot-400M-distill") -> None:
+        super(HugginfaceInferenceClientCustomLLM, self).__init__()
+        self.inference_client = InferenceClient(model)
+
+    @property
+    def _llm_type(self) -> str:
+        return "custom"
+
+    def _call(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+        **kwargs: Any
+    ) -> str:
+        response = self.inference_client.conversational(prompt)
+        return response["generated_text"]
