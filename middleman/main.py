@@ -10,10 +10,10 @@ from langchain.prompts import (
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema import SystemMessage
 from langchain.chains import LLMChain
-from langchain.chat_models import ChatOpenAI
 
-from middleman.ConnectionManager import ConnectionManager
-from middleman.ConversationManager import ConversationManager
+from ConnectionManager import ConnectionManager
+from ConversationManager import ConversationManager
+from models.llm_model import HugginfaceInferenceClientStreamingCustomLLM
 
 load_dotenv()
 
@@ -74,12 +74,14 @@ def post_conversation(payload: Payload):
 
 connection_manager = ConnectionManager()
 
+llm = HugginfaceInferenceClientStreamingCustomLLM()
+
 
 @app.websocket("/ws/conversation")
 async def conversation(websocket: WebSocket):
     await websocket.accept()
     conversation_manager = ConversationManager(
-        websocket=websocket, connection_manager=connection_manager
+        websocket=websocket, connection_manager=connection_manager, llm=llm
     )
     while True:
-        conversation_manager.start_conversation()
+        await conversation_manager.start_conversation()

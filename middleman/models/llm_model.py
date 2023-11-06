@@ -1,3 +1,5 @@
+from socket import timeout
+from threading import Thread
 from langchain.chat_models import ChatOpenAI
 from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.memory import ConversationBufferMemory
@@ -8,6 +10,7 @@ from langchain.llms.base import LLM
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 
 from huggingface_hub import InferenceClient
+
 
 from typing import Optional, List, Any
 
@@ -81,3 +84,34 @@ class HugginfaceInferenceClientCustomLLM(LLM):
     ) -> str:
         response = self.inference_client.conversational(prompt)
         return response["generated_text"]
+
+
+class HugginfaceInferenceClientStreamingCustomLLM(LLM):
+    inference_client: InferenceClient = None
+    # model: str = None
+    # tokenizer: PreTrainedTokenizer | PreTrainedTokenizerFast = None
+    # streamer: TextStreamer = None
+
+    def __init__(self, model="mistralai/Mistral-7B-Instruct-v0.1") -> None:
+        super(HugginfaceInferenceClientStreamingCustomLLM, self).__init__()
+        self.inference_client = InferenceClient(model=model)
+        # self.model = AutoModelForCausalLM.from_pretrained(model)
+        # self.tokenizer = AutoTokenizer.from_pretrained(model)
+        # self.streamer = TextStreamer(tokenizer=self.tokenizer, Timeout=5)
+
+    @property
+    def _llm_type(self) -> str:
+        return "custom"
+
+    def _call(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+        **kwargs: Any
+    ) -> str:
+        kwargs = dict(prompt=prompt, stream=True, max_new_tokens=2**10)
+        thread = Thread(target=self.inference_client.text_generation, kwargs=kwargs)
+        thread.start()
+
+        return ""
