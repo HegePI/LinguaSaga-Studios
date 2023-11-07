@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour
 {
     private SpriteRenderer NPC1SpriteRenderer;
     public float speed = 5.0f;
+
+    public GameObject canvasObject;
     private Animator animator;
 
     private void Start()
@@ -17,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
+        if(!canvasObject.activeSelf){
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -41,6 +44,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             animator.SetBool("isMoving", false);
+        }
         }
     }
 }

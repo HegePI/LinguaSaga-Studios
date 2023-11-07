@@ -3,19 +3,39 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
+using TMPro;
+using UnityEngine.TextCore.Text;
+using System;
 
 public class NPC1Behaviour : MonoBehaviour
 {
     bool isInTriggerRange = false;
+    public GameObject canvasObject;
 
+    public GameObject dialog;
+
+    public TMP_InputField input;
+
+    
     private void Update()
     {
+       
         if (Input.GetButtonDown("Interact") && isInTriggerRange)
         {
-            NPCResponse();
-        }  
+            canvasObject.SetActive(true);  
+            input.onSubmit.AddListener(SendUserMessage);
+        }
+
+        if (!isInTriggerRange || Input.GetButtonDown("Cancel")){
+            canvasObject.SetActive(false);
+        }
     }
 
+    private void SendUserMessage(string arg0)
+    {
+        dialog.GetComponent<TMP_Text>().text = input.text;
+        input.text = "";
+    }
     /*
     The API for a simple get request. To be updated later once we have full code. For now, let's just print something out with a function "NPC Response"
     IEnumerator FetchNPCResponse()
@@ -38,14 +58,11 @@ public class NPC1Behaviour : MonoBehaviour
         
     }
     */
-    public void NPCResponse()
-    {
-        Debug.Log("Hi, I am being interacted with!!!");
-    }
     private void OnTriggerStay2D(Collider2D Other){
         isInTriggerRange = true;
     }
-    private void OnTriggerLeave2D(Collider2D Other){
+    private void OnTriggerExit2D(Collider2D Other){
         isInTriggerRange = false;
+        
     }
 }
