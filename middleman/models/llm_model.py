@@ -1,18 +1,15 @@
-from socket import timeout
-from threading import Thread
-from langchain.chat_models import ChatOpenAI
-from langchain.llms.huggingface_hub import HuggingFaceHub
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationalRetrievalChain, StuffDocumentsChain
-from langchain.schema.retriever import BaseRetriever
-from langchain.prompts import PromptTemplate
-from langchain.llms.base import LLM
-from langchain.callbacks.manager import CallbackManagerForLLMRun
+import os
+from typing import Any, Iterable, List, Optional
 
 from huggingface_hub import InferenceClient
-
-
-from typing import Optional, List, Any
+from langchain.callbacks.manager import CallbackManagerForLLMRun
+from langchain.chains import ConversationalRetrievalChain, StuffDocumentsChain
+from langchain.chat_models import ChatOpenAI
+from langchain.llms.base import LLM
+from langchain.llms.huggingface_hub import HuggingFaceHub
+from langchain.memory import ConversationBufferMemory
+from langchain.prompts import PromptTemplate
+from langchain.schema.retriever import BaseRetriever
 
 
 class HuggingfaceConversationalRetrievalModel:
@@ -88,30 +85,21 @@ class HugginfaceInferenceClientCustomLLM(LLM):
 
 class HugginfaceInferenceClientStreamingCustomLLM(LLM):
     inference_client: InferenceClient = None
-    # model: str = None
-    # tokenizer: PreTrainedTokenizer | PreTrainedTokenizerFast = None
-    # streamer: TextStreamer = None
 
     def __init__(self, model="mistralai/Mistral-7B-Instruct-v0.1") -> None:
         super(HugginfaceInferenceClientStreamingCustomLLM, self).__init__()
-        self.inference_client = InferenceClient(model=model)
-        # self.model = AutoModelForCausalLM.from_pretrained(model)
-        # self.tokenizer = AutoTokenizer.from_pretrained(model)
-        # self.streamer = TextStreamer(tokenizer=self.tokenizer, Timeout=5)
+        self.inference_client = InferenceClient(
+            model=model, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
+        )
 
     @property
     def _llm_type(self) -> str:
         return "custom"
 
-    def _call(
-        self,
-        prompt: str,
-        stop: Optional[List[str]] = None,
-        run_manager: Optional[CallbackManagerForLLMRun] = None,
-        **kwargs: Any
-    ) -> str:
-        kwargs = dict(prompt=prompt, stream=True, max_new_tokens=2**10)
-        thread = Thread(target=self.inference_client.text_generation, kwargs=kwargs)
-        thread.start()
+    def _call(self, prompt: str) -> str:
+        return self.inference_client.text_generation(prompt)
 
-        return ""
+    def stream_answer(self, prompt):
+        return self.inference_client.text_generation(
+            prompt, max_new_tokens=2**10, stream=True
+        )

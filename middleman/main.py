@@ -1,19 +1,15 @@
+from ConnectionManager import ConnectionManager
 from dotenv import load_dotenv
-from fastapi import FastAPI, WebSocket
-from pydantic import BaseModel
-from langchain.llms.huggingface_hub import HuggingFaceHub
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.responses import StreamingResponse
+from langchain.chains import LLMChain
 from langchain.chains.conversation.memory import ConversationBufferMemory
-from langchain.prompts import (
-    MessagesPlaceholder,
-    HumanMessagePromptTemplate,
-)
+from langchain.llms.huggingface_hub import HuggingFaceHub
+from langchain.prompts import HumanMessagePromptTemplate, MessagesPlaceholder
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema import SystemMessage
-from langchain.chains import LLMChain
-
-from ConnectionManager import ConnectionManager
-from ConversationManager import ConversationManager
 from models.llm_model import HugginfaceInferenceClientStreamingCustomLLM
+from pydantic import BaseModel
 
 load_dotenv()
 
@@ -42,8 +38,14 @@ def root():
     return {"version": "0.0.1"}
 
 
+connection_manager = ConnectionManager()
+
+llm = HugginfaceInferenceClientStreamingCustomLLM()
+
+
 @app.post("/conversation")
 def post_conversation(payload: Payload):
+    print(payload)
     prompt = ChatPromptTemplate.from_messages(
         [
             SystemMessage(
@@ -72,16 +74,20 @@ def post_conversation(payload: Payload):
     }
 
 
-connection_manager = ConnectionManager()
-
-llm = HugginfaceInferenceClientStreamingCustomLLM()
+@app.post("/conversation/stream")
+async def post_conversation_stream(payload: Payload):
+    print("conversation/stream")
+    generator = llm.stream_answer(payload.player_input)
+    return StreamingResponse((line for line in generator), media_type="text/plain")
 
 
 @app.websocket("/ws/conversation")
 async def conversation(websocket: WebSocket):
-    await websocket.accept()
-    conversation_manager = ConversationManager(
-        websocket=websocket, connection_manager=connection_manager, llm=llm
-    )
-    while True:
-        await conversation_manager.start_conversation()
+    await connection_manager.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_json()
+            for chunk in llm.stream_answer(data["player_input"]):
+                await connection_manager.send_message(chunk, websocket)
+    except WebSocketDisconnect:
+        connection_manager.disconnect(websocket)
