@@ -1,4 +1,4 @@
-from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
+from langchain.embeddings import HuggingFaceInstructEmbeddings, OpenAIEmbeddings
 
 
 def get_openaiEmbedding_model():
