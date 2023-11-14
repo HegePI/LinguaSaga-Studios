@@ -42,11 +42,15 @@ def query_index(index, query):
 if __name__ == "__main__":
     load_dotenv()
 
-    DATA_PATH = "./js_file.pdf"
+    DATA_PATH = "js_file.pdf"
     LOCAL_PERSIST_PATH = "./vector_store"
     INDEX_NAME = "test2"
 
     index = load_index(INDEX_NAME)
     load_pdf_and_save_to_index(DATA_PATH, INDEX_NAME)
-    ans = query_index(index, "who is johnny silverhand?")
-    print(ans)
+
+    while True:
+        question = input("Ask a question: ")
+        print("\n\n")
+        print(query_index(index, question))
+        print("\n\n")
