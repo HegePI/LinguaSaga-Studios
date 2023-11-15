@@ -1,5 +1,5 @@
 import os
-from typing import Any, Iterable, List, Optional
+from typing import Any, Dict, List, Optional
 
 from huggingface_hub import InferenceClient
 from langchain.callbacks.manager import CallbackManagerForLLMRun
@@ -10,6 +10,7 @@ from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 from langchain.schema.retriever import BaseRetriever
+from langchain.schema.runnable import RunnableConfig
 
 
 class HuggingfaceConversationalRetrievalModel:
@@ -96,10 +97,17 @@ class HugginfaceInferenceClientStreamingCustomLLM(LLM):
     def _llm_type(self) -> str:
         return "custom"
 
-    def _call(self, prompt: str) -> str:
+    def _call(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+        **kwargs: Any
+    ) -> str:
         return self.inference_client.text_generation(prompt)
 
-    def stream_answer(self, prompt):
+    def stream(self, input: Dict[str, Any], config: RunnableConfig | None = None):
+        print("stream", input["content"])
         return self.inference_client.text_generation(
-            prompt, max_new_tokens=2**10, stream=True
+            input, max_new_tokens=2**10, stream=True
         )

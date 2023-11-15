@@ -1,12 +1,11 @@
+import streamlit as st
+from config.templates import bot_template, user_template
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
-
 from models.llm_model import (
     HugginfaceInferenceClientCustomLLM,
     HuggingfaceConversationalRetrievalModel,
 )
-import streamlit as st
-from config.templates import bot_template, user_template
 from PyPDF2 import PdfReader
 
 

@@ -1,6 +1,7 @@
-from ConnectionManager import ConnectionManager
 from fastapi import WebSocket, WebSocketDisconnect
-from models.llm_model import HugginfaceInferenceClientStreamingCustomLLM
+
+from middleman.models.llm_model import HugginfaceInferenceClientStreamingCustomLLM
+from middleman.utils.ConnectionManager import ConnectionManager
 
 
 class ConversationManager:
@@ -21,7 +22,7 @@ class ConversationManager:
         try:
             while True:
                 data = await self.websocket.receive_json()
-                for chunk in self.llm.stream_answer(prompt=data["player_input"]):
+                for chunk in self.llm.stream(prompt=data["player_input"]):
                     print("chunk: ", chunk)
                     await self.websocket.send_text(chunk)
 

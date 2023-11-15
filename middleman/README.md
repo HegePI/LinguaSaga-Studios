@@ -50,3 +50,15 @@ pip install -r requirements.txt
 ```bash
 streamlit run chatbot.py
 ```
+
+## Vectorstore
+
+1. Run vectorstore script
+
+```python
+python vectorstore.py
+```
+
+2. Then you can start asking questions
+
+![image-20231113183217323](images/vectorstore-demo.png)

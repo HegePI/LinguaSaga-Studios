@@ -2,11 +2,12 @@ import os
 
 from dotenv import load_dotenv
 from langchain.document_loaders import PyPDFLoader
-from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
+from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.indexes.vectorstore import (
     VectorstoreIndexCreator,
     VectorStoreIndexWrapper,
 )
+
 from langchain.vectorstores.chroma import Chroma
 
 
@@ -24,10 +25,7 @@ def load_pdf_and_save_to_index(file_path, index_name):
 
 def load_index(index_name):
     index_path = get_index_path(index_name)
-    embedding_function = OpenAIEmbeddingFunction(
-        api_key=os.environ["OPENAI_API_KEY"],
-        model_name="text-embedding-ada-002",
-    )
+    embedding_function = OpenAIEmbeddings()
     vectordb = Chroma(
         persist_directory=index_path, embedding_function=embedding_function
     )
@@ -42,12 +40,12 @@ def query_index(index, query):
 if __name__ == "__main__":
     load_dotenv()
 
-    DATA_PATH = "js_file.pdf"
-    LOCAL_PERSIST_PATH = "./vector_store"
+    DATA_PATH = "data/js_file.pdf"
+    LOCAL_PERSIST_PATH = "vector_store"
     INDEX_NAME = "test2"
 
     index = load_index(INDEX_NAME)
-    load_pdf_and_save_to_index(DATA_PATH, INDEX_NAME)
+    # load_pdf_and_save_to_index(DATA_PATH, INDEX_NAME)
 
     while True:
         question = input("Ask a question: ")
