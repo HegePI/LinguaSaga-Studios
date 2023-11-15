@@ -24,7 +24,7 @@ pip install -r requirements.txt
 3. start the development server
 
 ```bash
-uvicorn main:app --reload
+uvicorn middleman:app --reload
 ```
 
 API endpoints are edited in the main.py file. API endpoints can be tested with vscode rest client extension (<https://marketplace.visualstudio.com/items?itemName=humao.rest-client>) by creating .rest files.
