@@ -11,7 +11,7 @@ public class NPC1Behaviour : MonoBehaviour
 {
     bool isInTriggerRange = false;
     public GameObject canvasObject;
-
+    public GameObject canvasInteraction;
     public GameObject dialog;
 
     public TMP_InputField input;
@@ -19,21 +19,29 @@ public class NPC1Behaviour : MonoBehaviour
     
     private void Update()
     {
-       
+        input.Select();
+        if (isInTriggerRange){
+            canvasInteraction.SetActive(true);
+        }
+        else {
+            canvasInteraction.SetActive(false);
+        }
         if (Input.GetButtonDown("Interact") && isInTriggerRange)
         {
             canvasObject.SetActive(true);  
             input.onSubmit.AddListener(SendUserMessage);
         }
-
-        if (!isInTriggerRange || Input.GetButtonDown("Cancel")){
+        else if (!isInTriggerRange || Input.GetButtonDown("Cancel")){
             canvasObject.SetActive(false);
         }
+        
     }
 
     private void SendUserMessage(string arg0)
-    {
-        dialog.GetComponent<TMP_Text>().text = input.text;
+    {   
+        input.Select();
+        print(input.text);
+        dialog.GetComponent<TMP_Text>().text += "\n\nPlayer: " + input.text;
         input.text = "";
     }
     /*
