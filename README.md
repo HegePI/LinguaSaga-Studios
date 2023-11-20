@@ -20,6 +20,10 @@ LinugaSaga-Studios
 ├── LanguageModel       =====================> Contains API facilitator and the core LLM models in Langchain framework
 │   └── middleman       =====================> Contains the middleman (API facilitator)
 │       └── model       =====================> Contains a wrapper for LangChain and BLOOM
+├── LatestGameBuild     =====================> Contains game's built files. Open "linguasaga-b1.x86_64" to start the game
+│   ├── linguasaga-b1_Data
+│   ├── linguasaga-b1.x86_64
+│   ├── UnityPlayer.so
 ├── LICENSE
 └── README.md
 ```
