@@ -105,32 +105,7 @@ async def conversation(websocket: WebSocket):
             data: Payload = await websocket.receive_json()
 
             if chain is None:
-                prompt = ChatPromptTemplate.from_messages(
-                    [
-                        SystemMessage(
-                            content=f"""You are a NPC character from the world of cyberpunk and you are having a conversation with a player.
-                            You are impersonating a NPC called {data["npc_data"]["npc_name"]}.
-                            You are described as {data["npc_data"]["description"]}.
-                            Your tasks to the player are {", ".join(d["description"] for d in data["npc_data"]["tasks"])} and you reveal them to the player if player asks about them.
-                            If player writes that he is willing to do the task, write in the end of the reponse <MISSION_INITIATED>.
-                            Imitate this character to best of you ability, but in case of you do not know what to say, say something agressive."""
-                        ),
-                        MessagesPlaceholder(variable_name="chat_history"),
-                        HumanMessagePromptTemplate.from_template("{human_input}"),
-                    ]
-                )
-
-                memory = ConversationBufferMemory(
-                    memory_key="chat_history",
-                    return_messages=True,
-                )
-
-                chain = LLMChain(
-                    prompt=prompt,
-                    llm=llm,
-                    memory=memory,
-                    verbose=True,
-                )
+                chain = get_chain(data)
 
             response = chain({"human_input": data["player_input"]})
             await connection_manager.send_message(response["text"], websocket)
@@ -148,34 +123,40 @@ async def conversation(websocket: WebSocket):
             data: Payload = await websocket.receive_json()
 
             if chain is None:
-                prompt = ChatPromptTemplate.from_messages(
-                    [
-                        SystemMessage(
-                            content=f"""You are a NPC character from the world of cyberpunk and you are having a conversation with a player.
-                            You are impersonating a NPC called {data["npc_data"]["npc_name"]}.
-                            You are described as {data["npc_data"]["description"]}.
-                            Your tasks to the player are {", ".join(d["description"] for d in data["npc_data"]["tasks"])} and you reveal them to the player if player asks about them.
-                            If player writes that he is willing to do the task, write in the end of the reponse <MISSION_INITIATED>.
-                            Imitate this character to best of you ability, but in case of you do not know what to say, say something agressive."""
-                        ),
-                        MessagesPlaceholder(variable_name="chat_history"),
-                        HumanMessagePromptTemplate.from_template("{human_input}"),
-                    ]
-                )
-
-                memory = ConversationBufferMemory(
-                    memory_key="chat_history",
-                    return_messages=True,
-                )
-
-                chain = LLMChain(
-                    prompt=prompt,
-                    llm=llm,
-                    memory=memory,
-                    verbose=True,
-                )
+                chain = get_chain(data)
 
             response = chain({"human_input": data["player_input"]})
             await connection_manager.send_message(response["text"], websocket)
     except WebSocketDisconnect:
         connection_manager.disconnect(websocket)
+
+
+def get_chain(data: Payload):
+    prompt = ChatPromptTemplate.from_messages(
+        [
+            SystemMessage(
+                content=f"""You are a NPC character from the world of cyberpunk and you are having a conversation with a player.
+            You are impersonating a NPC called {data["npc_data"]["npc_name"]}.
+            You are described as {data["npc_data"]["description"]}.
+            Your tasks to the player are {", ".join(d["description"] for d in data["npc_data"]["tasks"])} and you reveal them to the player if player asks about them.
+            If player writes that he is willing to do the task, write in the end of the reponse <MISSION_INITIATED>.
+            Imitate this character to best of you ability, but in case of you do not know what to say, say something agressive."""
+            ),
+            MessagesPlaceholder(variable_name="chat_history"),
+            HumanMessagePromptTemplate.from_template("{human_input}"),
+        ]
+    )
+
+    memory = ConversationBufferMemory(
+        memory_key="chat_history",
+        return_messages=True,
+    )
+
+    chain = LLMChain(
+        prompt=prompt,
+        llm=llm,
+        memory=memory,
+        verbose=True,
+    )
+
+    return chain
