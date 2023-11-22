@@ -12,7 +12,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 
-public class NPC1Behaviour : MonoBehaviour
+public class NPC2Behaviour : MonoBehaviour
 {
     bool isInTriggerRange = false;
     public GameObject canvasObject;
@@ -33,7 +33,7 @@ public class NPC1Behaviour : MonoBehaviour
 
         try
         {
-            await websocket.ConnectAsync(new Uri("ws://127.0.0.1:8000/ws/conversation/npc1"), cancellationTokenSource.Token);
+            await websocket.ConnectAsync(new Uri("ws://127.0.0.1:8000/ws/conversation/npc2"), cancellationTokenSource.Token);
             Debug.Log("WebSocket connected!");
 
             //Initiate function to receive messages from websocket
@@ -76,7 +76,7 @@ public class NPC1Behaviour : MonoBehaviour
             input.Select();
 
             //Send the input in the JSON format, store as a string, then converted to JSON
-            string jsonString = "{'player_name': 'player1','player_input':'" + input.text + "', 'npc_data': {'npc_name': 'Jhon Doe','backstory': '','description': '','tasks': [{'description': ''}]}}";
+            string jsonString = "{'player_name': 'player2','player_input':'" + input.text + "', 'npc_data': {'npc_name': 'Jane Doe','backstory': '','description': '','tasks': [{'description': ''}]}}";
             jsonString = jsonString.Replace('\'', '\"');
             JObject jsonObject = JObject.Parse(jsonString);
 
