@@ -29,7 +29,7 @@ public class NPC2Behaviour : MonoBehaviour
     {
         
         //Initiate websocket for the NPC
-        cancellationTokenSource = new CancellationTokenSource();
+/*         cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
         
 
@@ -44,12 +44,12 @@ public class NPC2Behaviour : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError("WebSocket connection error: " + e.Message);
-        }
+        } */
     }
     
     private void Update()
     {
-        input.Select();
+        
         if (isInTriggerRange){
             canvasInteraction.SetActive(true);
         }
@@ -77,7 +77,6 @@ public class NPC2Behaviour : MonoBehaviour
     {   try
         {
             input.Select();
-
             //Send the input in the JSON format, store as a string, then converted to JSON
             string jsonString = "{'player_name': 'player2','player_input':'" + input.text + "', 'npc_data': {'npc_name': 'Jane Doe','backstory': '','description': '','tasks': [{'description': ''}]}}";
             jsonString = jsonString.Replace('\'', '\"');

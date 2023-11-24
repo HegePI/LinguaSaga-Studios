@@ -30,7 +30,7 @@ public class NPC1Behaviour : MonoBehaviour
     {
         gun.SetActive(false);
         //Initiate websocket for the NPC
-        cancellationTokenSource = new CancellationTokenSource();
+/*         cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
 
         try
@@ -44,12 +44,12 @@ public class NPC1Behaviour : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError("WebSocket connection error: " + e.Message);
-        }
+        } */
     }
     
     private void Update()
     {
-        input.Select();
+        
         if (isInTriggerRange){
             canvasInteraction.SetActive(true);
         }
