@@ -3,25 +3,20 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import StreamingResponse
-from langchain.chains import LLMChain, ConversationChain
-from langchain.chains.conversation.memory import (
-    ConversationSummaryBufferMemory,
-    ConversationBufferMemory,
-)
-from langchain.llms.openai import OpenAI
-
-from langchain.llms.huggingface_hub import HuggingFaceHub
+from langchain.chains import LLMChain
+from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.chat_models.openai import ChatOpenAI
+from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.prompts import (
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
+    SystemMessagePromptTemplate,
 )
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema import SystemMessage
-from models.llm_model import HugginfaceInferenceClientStreamingCustomLLM
 from pydantic import BaseModel
 from utils.ConnectionManager import ConnectionManager
-from vectorstore import load_index, load_pdf_and_save_to_index
+from vectorstore import load_index, query_index
 
 load_dotenv()
 
@@ -45,11 +40,12 @@ class Payload(BaseModel):
     npc_data: NPCData
 
 
-retriever = None
+# Load index assuming it exists
+INDEX = load_index(os.environ["INDEX_NAME"])
 
-llm = ChatOpenAI()
+LLM = ChatOpenAI()
 
-connection_manager = ConnectionManager()
+CONNECTION_MANAGER = ConnectionManager()
 
 
 @app.get("/")
@@ -91,7 +87,7 @@ def post_conversation(payload: Payload):
 @app.post("/conversation/stream")
 async def post_conversation_stream(payload: Payload):
     print("conversation/stream")
-    generator = llm.stream(payload.player_input)
+    generator = LLM.stream(payload.player_input)
     return StreamingResponse((line for line in generator), media_type="text/plain")
 
 
@@ -99,7 +95,7 @@ async def post_conversation_stream(payload: Payload):
 async def conversation(websocket: WebSocket):
     chain = None
 
-    await connection_manager.connect(websocket)
+    await CONNECTION_MANAGER.connect(websocket)
     try:
         while True:
             data: Payload = await websocket.receive_json()
@@ -107,17 +103,18 @@ async def conversation(websocket: WebSocket):
             if chain is None:
                 chain = get_chain(data)
 
-            response = chain({"human_input": data["player_input"]})
-            await connection_manager.send_message(response["text"], websocket)
+            context = query_index(INDEX, data["player_input"])
+            response = chain({"human_input": data["player_input"], "context": context})
+            await CONNECTION_MANAGER.send_message(response["text"], websocket)
     except WebSocketDisconnect:
-        connection_manager.disconnect(websocket)
+        CONNECTION_MANAGER.disconnect(websocket)
 
 
 @app.websocket("/ws/conversation/npc2")
 async def conversation(websocket: WebSocket):
     chain = None
 
-    await connection_manager.connect(websocket)
+    await CONNECTION_MANAGER.connect(websocket)
     try:
         while True:
             data: Payload = await websocket.receive_json()
@@ -125,10 +122,11 @@ async def conversation(websocket: WebSocket):
             if chain is None:
                 chain = get_chain(data)
 
-            response = chain({"human_input": data["player_input"]})
-            await connection_manager.send_message(response["text"], websocket)
+            context = query_index(INDEX, data["player_input"])
+            response = chain({"human_input": data["player_input"], "context": context})
+            await CONNECTION_MANAGER.send_message(response["text"], websocket)
     except WebSocketDisconnect:
-        connection_manager.disconnect(websocket)
+        CONNECTION_MANAGER.disconnect(websocket)
 
 
 def get_chain(data: Payload):
@@ -142,6 +140,7 @@ def get_chain(data: Payload):
             If player writes that he is willing to do the task, write in the end of the reponse <MISSION_INITIATED>.
             Imitate this character to best of you ability, but in case of you do not know what to say, say something agressive."""
             ),
+            SystemMessagePromptTemplate.from_template("Context: {context}"),
             MessagesPlaceholder(variable_name="chat_history"),
             HumanMessagePromptTemplate.from_template("{human_input}"),
         ]
@@ -149,12 +148,13 @@ def get_chain(data: Payload):
 
     memory = ConversationBufferMemory(
         memory_key="chat_history",
+        input_key="human_input",
         return_messages=True,
     )
 
     chain = LLMChain(
         prompt=prompt,
-        llm=llm,
+        llm=LLM,
         memory=memory,
         verbose=True,
     )

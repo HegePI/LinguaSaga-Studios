@@ -11,8 +11,10 @@ from langchain.indexes.vectorstore import (
 from langchain.vectorstores.chroma import Chroma
 
 
-def get_index_path(index_name):
-    return os.path.join(LOCAL_PERSIST_PATH, index_name)
+def get_index_path(
+    index_name,
+):
+    return os.path.join(os.environ["LOCAL_PERSIST_PATH"], index_name)
 
 
 def load_pdf_and_save_to_index(file_path, index_name):
@@ -40,9 +42,9 @@ def query_index(index, query):
 if __name__ == "__main__":
     load_dotenv()
 
-    DATA_PATH = "data/js_file.pdf"
-    LOCAL_PERSIST_PATH = "vector_store"
-    INDEX_NAME = "test2"
+    DATA_PATH = os.environ["DATA_PATH"]
+    LOCAL_PERSIST_PATH = os.environ["LOCAL_PERSIST_PATH"]
+    INDEX_NAME = os.environ["INDEX_NAME"]
 
     index = load_index(INDEX_NAME)
     # load_pdf_and_save_to_index(DATA_PATH, INDEX_NAME)
