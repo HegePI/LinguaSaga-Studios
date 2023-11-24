@@ -21,18 +21,21 @@ public class NPC1Behaviour : MonoBehaviour
     private ClientWebSocket websocket;
     private CancellationTokenSource cancellationTokenSource;
     public string message;
+    bool initiateMission = false;
 
     public TMP_InputField input;
 
+    public GameObject gun;
     async void Start()
     {
+        gun.SetActive(false);
         //Initiate websocket for the NPC
-        cancellationTokenSource = new CancellationTokenSource();
+/*         cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
 
         try
         {
-            await websocket.ConnectAsync(new Uri("ws://127.0.0.1:8000/ws/conversation"), cancellationTokenSource.Token);
+            await websocket.ConnectAsync(new Uri("ws://127.0.0.1:8000/ws/conversation/npc1"), cancellationTokenSource.Token);
             Debug.Log("WebSocket connected!");
 
             //Initiate function to receive messages from websocket
@@ -41,12 +44,12 @@ public class NPC1Behaviour : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError("WebSocket connection error: " + e.Message);
-        }
+        } */
     }
     
     private void Update()
     {
-        input.Select();
+        
         if (isInTriggerRange){
             canvasInteraction.SetActive(true);
         }
@@ -61,6 +64,11 @@ public class NPC1Behaviour : MonoBehaviour
         }
         else if (!isInTriggerRange || Input.GetButtonDown("Cancel")){
             canvasObject.SetActive(false);
+        }
+        if (initiateMission)
+        {
+            gun.SetActive(true);
+            Debug.Log("The mission has started");
         }
         
     }
@@ -118,6 +126,12 @@ public class NPC1Behaviour : MonoBehaviour
                 {
                     message = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
+                    //First check if it is a mission text
+                    if (message.Contains("<MISSION_INITIATED>"))
+                    {
+                        initiateMission = true;
+                        message = message.Replace("<MISSION_INITIATED>", "");
+                    }
                     //Display message in canvas after receiving it from response
                     dialog.GetComponent<TMP_Text>().text = "\n\n" + message + dialog.GetComponent<TMP_Text>().text;
                     input.text = "";

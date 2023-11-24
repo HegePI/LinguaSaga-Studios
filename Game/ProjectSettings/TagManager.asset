@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ramenCart
   - stairs
+  - gun
   layers:
   - Default
   - TransparentFX
