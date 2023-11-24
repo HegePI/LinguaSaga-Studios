@@ -1,0 +1,1411 @@
+fileFormatVersion: 2
+guid: 376f255edd4991d4aa0c7ac94c9ff67f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: demo-with-shooting_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7320f80b3bd98f14a92557932f3a2a38
+      internalID: 1660426472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a20c94087e20d24ab8436cd13bcb335
+      internalID: 161831679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_2
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26657596d13fae409627b1c7e9f8bc1
+      internalID: -563392125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc85f28a33f01f648971e6759c50ceb7
+      internalID: 1702653837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_4
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f700ada885f1054396a5de5d68d6daa
+      internalID: 1942083466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_5
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf2846791a8baf419dd872a5ea208cd
+      internalID: -840565645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_6
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 72
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ce4735fa1f0034b9a6616628dda47d
+      internalID: -1046766104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0091d6980e586b43b7683c2662e81a2
+      internalID: 91558189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13e6115ce3968642867fc0bad385a6c
+      internalID: 964838603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83adca1c7416ae94eb8f3ef94d981d79
+      internalID: -1388628707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ae05e3f446c2d4a9da250e3d19847b
+      internalID: 1946805707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_11
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025ea53b0f9195a4f84e6d6a34c1462c
+      internalID: 814990800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_12
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a85ea065a4034c4ab06f56b0da7d66a
+      internalID: -262711825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_13
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 54
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef140615e86cbb14cb819cff2be67e39
+      internalID: 432054742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3e12bba02e8df45bfaba8830a85303
+      internalID: -930156410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_15
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8c1de7222ca1e4c8aeb85de3ed87d2
+      internalID: -765442665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_16
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010779e4b268cf64a927fc3dcaede997
+      internalID: 1082468941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_17
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8840d7a7571fdcd4888acd34f46c283e
+      internalID: 1602754034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_18
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf18e1f7cfb01b44a397efb8e463c89
+      internalID: 129530153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_19
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a79ef07543fbf542b533351db4eb584
+      internalID: 1275086355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_20
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 36
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3669fda04f80de5408e9868717f04936
+      internalID: 1042645786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5287f052b0dc64e43ae34feab82860cc
+      internalID: 852919238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_22
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073ded40a4f6f14449e2d4b1a230676f
+      internalID: -882555452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_23
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55849e721a7a5f449953df6eaed39ee
+      internalID: 1961606609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_24
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b8e187083aee441b1a0fcfbf140b59
+      internalID: 1025228848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_25
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff6bc88d7c65e643ac997272c1c719f
+      internalID: -1687631134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_26
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce7e08d481f4374ba2681f6924387b7
+      internalID: -1812666087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_27
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 18
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1a550a40d73ee469fe7f2baa661737
+      internalID: -1947287780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ba90332c0d7bf4d940e056a74dc575
+      internalID: 245059193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_29
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3cc24466abf4349b27abbde35a972c
+      internalID: -1762012668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_30
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f40a0ba3c5a8b84daf444397d3a1bea
+      internalID: 1464920201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_31
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4ad045d9a6951469128b831033005d
+      internalID: -1686514485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_32
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74194274ff0258646ad746692b91f6fa
+      internalID: -604893384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_33
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddce030ea7594ea4f9fbbb21b2112d58
+      internalID: -1289130061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demo-with-shooting_34
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 92
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe64aa35cc7b2e4cb673892bfbc93f3
+      internalID: 1116281806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -302, y: -32}
+      - {x: -311, y: -32}
+      - {x: -312, y: -34}
+      - {x: -312, y: -41}
+      - {x: -309, y: -42}
+      - {x: -300, y: -42}
+      - {x: -296, y: -38}
+      - {x: -296, y: -36}
+      - {x: -297, y: -34}
+    - - {x: -219, y: -32}
+      - {x: -220, y: -34}
+      - {x: -220, y: -41}
+      - {x: -216, y: -42}
+      - {x: -207, y: -42}
+      - {x: -200, y: -39}
+      - {x: -200, y: -34}
+      - {x: -201, y: -32}
+    - - {x: -105, y: -31}
+      - {x: -126, y: -31}
+      - {x: -128, y: -34}
+      - {x: -128, y: -42}
+      - {x: -60, y: -42}
+      - {x: -44, y: -39}
+      - {x: -44, y: -35}
+      - {x: -45, y: -34}
+    - - {x: -28, y: -31}
+      - {x: -35, y: -33}
+      - {x: -38, y: -36}
+      - {x: -38, y: -40}
+      - {x: -35, y: -42}
+      - {x: -29, y: -42}
+      - {x: -22, y: -37}
+      - {x: -22, y: -35}
+      - {x: -23, y: -33}
+    - - {x: 65, y: -31}
+      - {x: 58, y: -33}
+      - {x: 55, y: -36}
+      - {x: 55, y: -40}
+      - {x: 58, y: -42}
+      - {x: 64, y: -42}
+      - {x: 71, y: -37}
+      - {x: 71, y: -35}
+      - {x: 70, y: -33}
+    - - {x: 150, y: -32}
+      - {x: 148, y: -36}
+      - {x: 148, y: -42}
+      - {x: 160, y: -42}
+      - {x: 164, y: -37}
+      - {x: 163, y: -34}
+      - {x: 158, y: -32}
+    - - {x: 246, y: -32}
+      - {x: 240, y: -34}
+      - {x: 240, y: -40}
+      - {x: 241, y: -42}
+      - {x: 250, y: -42}
+      - {x: 256, y: -40}
+      - {x: 256, y: -37}
+      - {x: 255, y: -34}
+      - {x: 251, y: -32}
+    - - {x: -16, y: -36}
+      - {x: -15, y: -39}
+      - {x: -8, y: -39}
+      - {x: -6, y: -37}
+      - {x: -7, y: -34}
+      - {x: -14, y: -34}
+    - - {x: -6, y: -34}
+      - {x: -6, y: -38}
+      - {x: -5, y: -39}
+      - {x: 9, y: -39}
+      - {x: 10, y: -37}
+      - {x: 9, y: -34}
+    - - {x: 10, y: -36}
+      - {x: 11, y: -39}
+      - {x: 15, y: -39}
+      - {x: 17, y: -37}
+      - {x: 16, y: -34}
+      - {x: 12, y: -34}
+    - - {x: 20, y: -34}
+      - {x: 18, y: -35}
+      - {x: 18, y: -38}
+      - {x: 19, y: -39}
+      - {x: 25, y: -39}
+      - {x: 27, y: -38}
+      - {x: 27, y: -35}
+      - {x: 25, y: -34}
+    - - {x: 80, y: -39}
+      - {x: 83, y: -38}
+      - {x: 83, y: -35}
+      - {x: 80, y: -34}
+      - {x: 78, y: -36}
+    - - {x: 90, y: -39}
+      - {x: 93, y: -38}
+      - {x: 93, y: -35}
+      - {x: 90, y: -34}
+      - {x: 88, y: -36}
+    - - {x: 98, y: -39}
+      - {x: 101, y: -38}
+      - {x: 101, y: -35}
+      - {x: 98, y: -34}
+      - {x: 96, y: -36}
+    - - {x: 105, y: -39}
+      - {x: 108, y: -38}
+      - {x: 108, y: -35}
+      - {x: 105, y: -34}
+      - {x: 103, y: -36}
+    - - {x: -312, y: -21}
+      - {x: -311, y: -24}
+      - {x: -302, y: -24}
+      - {x: -296, y: -22}
+      - {x: -296, y: -16}
+      - {x: -298, y: -14}
+      - {x: -306, y: -14}
+      - {x: -312, y: -17}
+    - - {x: -219, y: -14}
+      - {x: -220, y: -18}
+      - {x: -220, y: -23}
+      - {x: -219, y: -24}
+      - {x: -212, y: -24}
+      - {x: -202, y: -23}
+      - {x: -200, y: -20}
+      - {x: -200, y: -15}
+      - {x: -203, y: -14}
+    - - {x: -126, y: -13}
+      - {x: -127, y: -14}
+      - {x: -128, y: -17}
+      - {x: -128, y: -24}
+      - {x: -44, y: -24}
+      - {x: -44, y: -13}
+    - - {x: -32, y: -14}
+      - {x: -38, y: -17}
+      - {x: -38, y: -21}
+      - {x: -36, y: -24}
+      - {x: -27, y: -24}
+      - {x: -22, y: -21}
+      - {x: -22, y: -17}
+      - {x: -24, y: -14}
+    - - {x: 61, y: -14}
+      - {x: 55, y: -17}
+      - {x: 55, y: -21}
+      - {x: 57, y: -24}
+      - {x: 66, y: -24}
+      - {x: 71, y: -21}
+      - {x: 71, y: -17}
+      - {x: 69, y: -14}
+    - - {x: 154, y: -14}
+      - {x: 148, y: -18}
+      - {x: 148, y: -21}
+      - {x: 151, y: -24}
+      - {x: 161, y: -23}
+      - {x: 164, y: -22}
+      - {x: 164, y: -18}
+      - {x: 162, y: -14}
+    - - {x: 244, y: -14}
+      - {x: 240, y: -17}
+      - {x: 240, y: -21}
+      - {x: 243, y: -24}
+      - {x: 254, y: -24}
+      - {x: 256, y: -20}
+      - {x: 256, y: -16}
+      - {x: 254, y: -14}
+    - - {x: -16, y: -18}
+      - {x: -15, y: -21}
+      - {x: -8, y: -21}
+      - {x: -6, y: -19}
+      - {x: -7, y: -16}
+      - {x: -14, y: -16}
+    - - {x: -5, y: -16}
+      - {x: -6, y: -18}
+      - {x: -5, y: -21}
+      - {x: 9, y: -21}
+      - {x: 10, y: -19}
+      - {x: 9, y: -16}
+    - - {x: 10, y: -18}
+      - {x: 11, y: -21}
+      - {x: 15, y: -21}
+      - {x: 17, y: -19}
+      - {x: 16, y: -16}
+      - {x: 12, y: -16}
+    - - {x: 20, y: -16}
+      - {x: 18, y: -17}
+      - {x: 18, y: -20}
+      - {x: 19, y: -21}
+      - {x: 25, y: -21}
+      - {x: 27, y: -20}
+      - {x: 27, y: -17}
+      - {x: 25, y: -16}
+    - - {x: 80, y: -21}
+      - {x: 83, y: -20}
+      - {x: 83, y: -17}
+      - {x: 80, y: -16}
+      - {x: 78, y: -18}
+    - - {x: 90, y: -21}
+      - {x: 93, y: -20}
+      - {x: 93, y: -17}
+      - {x: 90, y: -16}
+      - {x: 88, y: -18}
+    - - {x: 98, y: -21}
+      - {x: 101, y: -20}
+      - {x: 101, y: -17}
+      - {x: 98, y: -16}
+      - {x: 96, y: -18}
+    - - {x: 105, y: -21}
+      - {x: 108, y: -20}
+      - {x: 108, y: -17}
+      - {x: 105, y: -16}
+      - {x: 103, y: -18}
+    - - {x: -129, y: -6}
+      - {x: -64, y: -6}
+      - {x: -44, y: -3}
+      - {x: -44, y: 5}
+      - {x: -131, y: 5}
+      - {x: -131, y: -4}
+    - - {x: -315, y: 5}
+      - {x: -315, y: -4}
+      - {x: -313, y: -5}
+      - {x: -299, y: -5}
+      - {x: -296, y: -3}
+      - {x: -296, y: 5}
+    - - {x: -221, y: 5}
+      - {x: -223, y: 4}
+      - {x: -223, y: -3}
+      - {x: -222, y: -5}
+      - {x: -201, y: -5}
+      - {x: -200, y: -3}
+      - {x: -200, y: 2}
+      - {x: -204, y: 5}
+    - - {x: -33, y: 6}
+      - {x: -38, y: 3}
+      - {x: -41, y: 0}
+      - {x: -41, y: -3}
+      - {x: -39, y: -5}
+      - {x: -29, y: -5}
+      - {x: -22, y: -4}
+      - {x: -22, y: 3}
+      - {x: -29, y: 6}
+    - - {x: 60, y: 6}
+      - {x: 55, y: 3}
+      - {x: 52, y: 0}
+      - {x: 52, y: -3}
+      - {x: 54, y: -5}
+      - {x: 64, y: -5}
+      - {x: 71, y: -4}
+      - {x: 71, y: 3}
+      - {x: 64, y: 6}
+    - - {x: 159, y: 5}
+      - {x: 149, y: 5}
+      - {x: 147, y: 4}
+      - {x: 145, y: 0}
+      - {x: 145, y: -4}
+      - {x: 148, y: -5}
+      - {x: 156, y: -5}
+      - {x: 163, y: -3}
+      - {x: 164, y: -1}
+      - {x: 164, y: 2}
+    - - {x: 251, y: 5}
+      - {x: 241, y: 5}
+      - {x: 239, y: 4}
+      - {x: 237, y: 0}
+      - {x: 237, y: -4}
+      - {x: 240, y: -5}
+      - {x: 248, y: -5}
+      - {x: 255, y: -3}
+      - {x: 256, y: -1}
+      - {x: 256, y: 2}
+    - - {x: -16, y: 0}
+      - {x: -15, y: -3}
+      - {x: -8, y: -3}
+      - {x: -6, y: -1}
+      - {x: -7, y: 2}
+      - {x: -14, y: 2}
+    - - {x: -5, y: 2}
+      - {x: -6, y: 0}
+      - {x: -5, y: -3}
+      - {x: 9, y: -3}
+      - {x: 10, y: -1}
+      - {x: 9, y: 2}
+    - - {x: 10, y: 0}
+      - {x: 11, y: -3}
+      - {x: 15, y: -3}
+      - {x: 17, y: -1}
+      - {x: 16, y: 2}
+      - {x: 12, y: 2}
+    - - {x: 20, y: 2}
+      - {x: 18, y: 1}
+      - {x: 18, y: -2}
+      - {x: 19, y: -3}
+      - {x: 25, y: -3}
+      - {x: 27, y: -2}
+      - {x: 27, y: 1}
+      - {x: 25, y: 2}
+    - - {x: 80, y: -3}
+      - {x: 83, y: -2}
+      - {x: 83, y: 1}
+      - {x: 80, y: 2}
+      - {x: 78, y: 0}
+    - - {x: 90, y: -3}
+      - {x: 93, y: -2}
+      - {x: 93, y: 1}
+      - {x: 90, y: 2}
+      - {x: 88, y: 0}
+    - - {x: 98, y: -3}
+      - {x: 101, y: -2}
+      - {x: 101, y: 1}
+      - {x: 98, y: 2}
+      - {x: 96, y: 0}
+    - - {x: 105, y: -3}
+      - {x: 108, y: -2}
+      - {x: 108, y: 1}
+      - {x: 105, y: 2}
+      - {x: 103, y: 0}
+    - - {x: -131, y: 23}
+      - {x: -132, y: 19}
+      - {x: -132, y: 14}
+      - {x: -130, y: 12}
+      - {x: -59, y: 12}
+      - {x: -44, y: 13}
+      - {x: -44, y: 23}
+    - - {x: -314, y: 22}
+      - {x: -316, y: 19}
+      - {x: -316, y: 14}
+      - {x: -314, y: 13}
+      - {x: -304, y: 13}
+      - {x: -301, y: 14}
+      - {x: -296, y: 17}
+      - {x: -298, y: 22}
+    - - {x: -224, y: 16}
+      - {x: -222, y: 13}
+      - {x: -207, y: 13}
+      - {x: -200, y: 15}
+      - {x: -200, y: 20}
+      - {x: -202, y: 22}
+      - {x: -221, y: 22}
+      - {x: -224, y: 21}
+    - - {x: -42, y: 13}
+      - {x: -31, y: 13}
+      - {x: -22, y: 17}
+      - {x: -22, y: 20}
+      - {x: -24, y: 23}
+      - {x: -40, y: 23}
+      - {x: -42, y: 19}
+    - - {x: 51, y: 13}
+      - {x: 62, y: 13}
+      - {x: 71, y: 17}
+      - {x: 71, y: 20}
+      - {x: 69, y: 23}
+      - {x: 53, y: 23}
+      - {x: 51, y: 19}
+    - - {x: 146, y: 22}
+      - {x: 144, y: 19}
+      - {x: 144, y: 14}
+      - {x: 146, y: 13}
+      - {x: 156, y: 13}
+      - {x: 159, y: 14}
+      - {x: 164, y: 17}
+      - {x: 162, y: 22}
+    - - {x: 236, y: 13}
+      - {x: 249, y: 13}
+      - {x: 256, y: 16}
+      - {x: 256, y: 18}
+      - {x: 254, y: 22}
+      - {x: 237, y: 22}
+      - {x: 236, y: 19}
+    - - {x: -16, y: 18}
+      - {x: -15, y: 15}
+      - {x: -8, y: 15}
+      - {x: -6, y: 17}
+      - {x: -7, y: 20}
+      - {x: -14, y: 20}
+    - - {x: -4, y: 20}
+      - {x: -6, y: 19}
+      - {x: -6, y: 16}
+      - {x: -5, y: 15}
+      - {x: 9, y: 15}
+      - {x: 10, y: 17}
+      - {x: 9, y: 20}
+    - - {x: 10, y: 18}
+      - {x: 11, y: 15}
+      - {x: 15, y: 15}
+      - {x: 17, y: 17}
+      - {x: 16, y: 20}
+      - {x: 12, y: 20}
+    - - {x: 20, y: 20}
+      - {x: 18, y: 19}
+      - {x: 18, y: 16}
+      - {x: 19, y: 15}
+      - {x: 25, y: 15}
+      - {x: 27, y: 16}
+      - {x: 27, y: 19}
+      - {x: 25, y: 20}
+    - - {x: 80, y: 15}
+      - {x: 83, y: 16}
+      - {x: 83, y: 19}
+      - {x: 80, y: 20}
+      - {x: 78, y: 18}
+    - - {x: 90, y: 15}
+      - {x: 93, y: 16}
+      - {x: 93, y: 19}
+      - {x: 90, y: 20}
+      - {x: 88, y: 18}
+    - - {x: 98, y: 15}
+      - {x: 101, y: 16}
+      - {x: 101, y: 19}
+      - {x: 98, y: 20}
+      - {x: 96, y: 18}
+    - - {x: 105, y: 15}
+      - {x: 108, y: 16}
+      - {x: 108, y: 19}
+      - {x: 105, y: 20}
+      - {x: 103, y: 18}
+    - - {x: -128, y: 42}
+      - {x: -128, y: 41}
+      - {x: -130, y: 38}
+      - {x: -130, y: 30}
+      - {x: -44, y: 30}
+      - {x: -44, y: 42}
+    - - {x: -306, y: 42}
+      - {x: -312, y: 41}
+      - {x: -314, y: 39}
+      - {x: -314, y: 35}
+      - {x: -313, y: 32}
+      - {x: -298, y: 32}
+      - {x: -296, y: 34}
+      - {x: -296, y: 37}
+      - {x: -298, y: 42}
+    - - {x: -206, y: 42}
+      - {x: -212, y: 42}
+      - {x: -219, y: 40}
+      - {x: -222, y: 37}
+      - {x: -222, y: 32}
+      - {x: -202, y: 32}
+      - {x: -200, y: 35}
+      - {x: -200, y: 38}
+    - - {x: -29, y: 43}
+      - {x: -38, y: 41}
+      - {x: -40, y: 37}
+      - {x: -40, y: 35}
+      - {x: -38, y: 32}
+      - {x: -25, y: 32}
+      - {x: -22, y: 36}
+      - {x: -23, y: 41}
+      - {x: -24, y: 43}
+    - - {x: 64, y: 43}
+      - {x: 55, y: 41}
+      - {x: 53, y: 37}
+      - {x: 53, y: 35}
+      - {x: 55, y: 32}
+      - {x: 68, y: 32}
+      - {x: 71, y: 36}
+      - {x: 70, y: 41}
+      - {x: 69, y: 43}
+    - - {x: 154, y: 42}
+      - {x: 148, y: 41}
+      - {x: 146, y: 39}
+      - {x: 146, y: 35}
+      - {x: 147, y: 32}
+      - {x: 162, y: 32}
+      - {x: 164, y: 34}
+      - {x: 164, y: 37}
+      - {x: 162, y: 42}
+    - - {x: 249, y: 42}
+      - {x: 240, y: 41}
+      - {x: 238, y: 39}
+      - {x: 238, y: 35}
+      - {x: 239, y: 32}
+      - {x: 253, y: 32}
+      - {x: 256, y: 35}
+      - {x: 255, y: 40}
+      - {x: 254, y: 42}
+    - - {x: -16, y: 36}
+      - {x: -15, y: 33}
+      - {x: -8, y: 33}
+      - {x: -6, y: 35}
+      - {x: -7, y: 38}
+      - {x: -14, y: 38}
+    - - {x: -6, y: 38}
+      - {x: -6, y: 34}
+      - {x: -5, y: 33}
+      - {x: 10, y: 33}
+      - {x: 10, y: 36}
+      - {x: 8, y: 38}
+    - - {x: 10, y: 36}
+      - {x: 11, y: 33}
+      - {x: 15, y: 33}
+      - {x: 17, y: 35}
+      - {x: 16, y: 38}
+      - {x: 12, y: 38}
+    - - {x: 20, y: 38}
+      - {x: 18, y: 37}
+      - {x: 18, y: 34}
+      - {x: 19, y: 33}
+      - {x: 25, y: 33}
+      - {x: 27, y: 34}
+      - {x: 27, y: 37}
+      - {x: 25, y: 38}
+    - - {x: 80, y: 33}
+      - {x: 83, y: 34}
+      - {x: 83, y: 37}
+      - {x: 80, y: 38}
+      - {x: 78, y: 36}
+    - - {x: 90, y: 33}
+      - {x: 93, y: 34}
+      - {x: 93, y: 37}
+      - {x: 90, y: 38}
+      - {x: 88, y: 36}
+    - - {x: 98, y: 33}
+      - {x: 101, y: 34}
+      - {x: 101, y: 37}
+      - {x: 98, y: 38}
+      - {x: 96, y: 36}
+    - - {x: 105, y: 33}
+      - {x: 108, y: 34}
+      - {x: 108, y: 37}
+      - {x: 105, y: 38}
+      - {x: 103, y: 36}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      demo-with-shooting_0: 1660426472
+      demo-with-shooting_1: 161831679
+      demo-with-shooting_10: 1946805707
+      demo-with-shooting_11: 814990800
+      demo-with-shooting_12: -262711825
+      demo-with-shooting_13: 432054742
+      demo-with-shooting_14: -930156410
+      demo-with-shooting_15: -765442665
+      demo-with-shooting_16: 1082468941
+      demo-with-shooting_17: 1602754034
+      demo-with-shooting_18: 129530153
+      demo-with-shooting_19: 1275086355
+      demo-with-shooting_2: -563392125
+      demo-with-shooting_20: 1042645786
+      demo-with-shooting_21: 852919238
+      demo-with-shooting_22: -882555452
+      demo-with-shooting_23: 1961606609
+      demo-with-shooting_24: 1025228848
+      demo-with-shooting_25: -1687631134
+      demo-with-shooting_26: -1812666087
+      demo-with-shooting_27: -1947287780
+      demo-with-shooting_28: 245059193
+      demo-with-shooting_29: -1762012668
+      demo-with-shooting_3: 1702653837
+      demo-with-shooting_30: 1464920201
+      demo-with-shooting_31: -1686514485
+      demo-with-shooting_32: -604893384
+      demo-with-shooting_33: -1289130061
+      demo-with-shooting_34: 1116281806
+      demo-with-shooting_4: 1942083466
+      demo-with-shooting_5: -840565645
+      demo-with-shooting_6: -1046766104
+      demo-with-shooting_7: 91558189
+      demo-with-shooting_8: 964838603
+      demo-with-shooting_9: -1388628707
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -25,8 +25,10 @@ public class NPC1Behaviour : MonoBehaviour
 
     public TMP_InputField input;
 
+    public GameObject gun;
     async void Start()
     {
+        gun.SetActive(false);
         //Initiate websocket for the NPC
         cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
@@ -65,6 +67,7 @@ public class NPC1Behaviour : MonoBehaviour
         }
         if (initiateMission)
         {
+            gun.SetActive(true);
             Debug.Log("The mission has started");
         }
         

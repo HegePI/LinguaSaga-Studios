@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
-
+using TMPro;
 public class CharacterMovement : MonoBehaviour
 {
     private SpriteRenderer NPC1SpriteRenderer;
@@ -10,8 +10,13 @@ public class CharacterMovement : MonoBehaviour
     public float slopeMovement = 0f;
     bool slopeFlag = false;
 
+    private List<string> items = new List<string>();
+
     public GameObject canvasObject;
     private Animator animator;
+
+
+    public GameObject inventory;
 
     private void Start()
     {
@@ -28,6 +33,14 @@ public class CharacterMovement : MonoBehaviour
 
             Vector3 currentInputDirection = new Vector3(horizontal, vertical + slopeMovement, 0.0f);
             
+            if(items.Count > 0){
+                string text = "Inventory: ";
+                foreach (var item in items)
+                {
+                    text += item;
+                }
+                inventory.GetComponent<TMP_Text>().text = text;
+            }
 
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
@@ -63,15 +76,20 @@ public class CharacterMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D Other)
     {
-        if (Other.tag == "stairs")
+        if (Other.CompareTag("stairs"))
         {
             slopeFlag = true;
+        }
+        if (Other.CompareTag("gun"))
+        {
+            Other.gameObject.SetActive(false);
+            items.Add("Gun");
         }
         
     }
     private void OnTriggerExit2D(Collider2D Other)
     {
-        if (Other.tag == "stairs")
+        if (Other.CompareTag("stairs"))
         {
             slopeFlag = false;
             slopeMovement = 0.0f;

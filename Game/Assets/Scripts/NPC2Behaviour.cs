@@ -22,14 +22,16 @@ public class NPC2Behaviour : MonoBehaviour
     private CancellationTokenSource cancellationTokenSource;
     public string message;
     bool initiateMission = false;
-
+    
     public TMP_InputField input;
 
     async void Start()
     {
+        
         //Initiate websocket for the NPC
         cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
+        
 
         try
         {
@@ -66,6 +68,7 @@ public class NPC2Behaviour : MonoBehaviour
         if (initiateMission)
         {
             Debug.Log("The mission has started");
+           
         }
         
     }
