@@ -67,9 +67,7 @@ public class NPC1Behaviour : MonoBehaviour
             if (inventory.GetComponent<TMP_Text>().text.Contains("Gun") && inventory.GetComponent<TMP_Text>().text.Contains("Tablet"))
             {
                 SendUserMessage("Here, I got your stuff back");
-                initiateMission = false;
-                inventory.GetComponent<TMP_Text>().text = "";
-                guestList.GetComponent<TMP_Text>().text = "All guests done";
+                
             }
             else
             {
@@ -114,8 +112,10 @@ public class NPC1Behaviour : MonoBehaviour
             }
             else if (inventory.GetComponent<TMP_Text>().text.Contains("gun") && inventory.GetComponent<TMP_Text>().text.Contains("tablet"))
             {
-                finalInput = arg0;
+                initiateMission = false;
                 inventory.GetComponent<TMP_Text>().text = "";
+                guestList.GetComponent<TMP_Text>().text = "All guests done";
+                finalInput = arg0;
             }
             //Send the input in the JSON format, store as a string, then converted to JSON
             string jsonString = "{'player_name': 'player1','player_input':'" + finalInput + "', 'npc_data': {'npc_name': 'John Silverhand','backstory': '','description': '','tasks': [{'description': 'Fetch my gun and my tablet'}]}}";
