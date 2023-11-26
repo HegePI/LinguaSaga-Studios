@@ -21,16 +21,16 @@ public class NPC1Behaviour : MonoBehaviour
     private ClientWebSocket websocket;
     private CancellationTokenSource cancellationTokenSource;
     public string message;
-    bool initiateMission = false;
-
+    public bool initiateMission = false;
     public TMP_InputField input;
-
     public GameObject gun;
+    public GameObject inventoryManagerGameObject;
+    private InventoryManager inventory;
     async void Start()
     {
         gun.SetActive(false);
         //Initiate websocket for the NPC
-/*         cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
 
         try
@@ -44,7 +44,8 @@ public class NPC1Behaviour : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError("WebSocket connection error: " + e.Message);
-        } */
+        }
+        inventory = inventoryManagerGameObject.GetComponent<InventoryManager>();
     }
     
     private void Update()
@@ -58,17 +59,32 @@ public class NPC1Behaviour : MonoBehaviour
         }
         if (Input.GetButtonDown("Interact") && isInTriggerRange)
         {
-            canvasObject.SetActive(true);  
-
-            input.onSubmit.AddListener(SendUserMessage);
+            canvasObject.SetActive(true); 
+            if (inventory.itemPicked)
+            {
+                SendUserMessage("Here, I got your gun back");
+            }
+            else
+            {
+                input.onSubmit.AddListener(SendUserMessage);
+            }
         }
         else if (!isInTriggerRange || Input.GetButtonDown("Cancel")){
             canvasObject.SetActive(false);
         }
         if (initiateMission)
         {
-            gun.SetActive(true);
-            Debug.Log("The mission has started");
+            if (inventory.itemPicked)
+            {
+                inventory.GetComponent<TMP_Text>().text = "Deliver Jhon's gun back";
+                gun.SetActive(false);
+            }
+            else
+            {
+                inventory.GetComponent<TMP_Text>().text = "Find Jhon's Gun";
+                gun.SetActive(true);
+            }
+
         }
         
     }
@@ -76,10 +92,19 @@ public class NPC1Behaviour : MonoBehaviour
     private async void SendUserMessage(string arg0)
     {   try
         {
-            input.Select();
-
+            string finalInput = "";
+            if (!inventory.itemPicked)
+            {
+                input.Select();
+                finalInput = input.text;
+            }
+            else
+            {
+                finalInput = arg0;
+                inventory.itemPicked = false;
+            }
             //Send the input in the JSON format, store as a string, then converted to JSON
-            string jsonString = "{'player_name': 'player1','player_input':'" + input.text + "', 'npc_data': {'npc_name': 'Jhon Doe','backstory': '','description': '','tasks': [{'description': ''}]}}";
+            string jsonString = "{'player_name': 'player1','player_input':'" + finalInput + "', 'npc_data': {'npc_name': 'Jhon Doe','backstory': '','description': '','tasks': [{'description': 'Fetch my gun'}]}}";
             jsonString = jsonString.Replace('\'', '\"');
             JObject jsonObject = JObject.Parse(jsonString);
 
