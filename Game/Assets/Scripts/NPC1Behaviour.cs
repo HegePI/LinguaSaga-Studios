@@ -24,11 +24,16 @@ public class NPC1Behaviour : MonoBehaviour
     public bool initiateMission = false;
     public TMP_InputField input;
     public GameObject gun;
-    public GameObject inventoryManagerGameObject;
-    private InventoryManager inventory;
+    public GameObject tablet;
+    public GameObject inventory;
+    public GameObject guestList;
     async void Start()
     {
         gun.SetActive(false);
+        tablet.SetActive(false);
+
+        guestList.GetComponent<TMP_Text>().text = "Find someone to talk to";
+
         //Initiate websocket for the NPC
         cancellationTokenSource = new CancellationTokenSource();
         websocket = new ClientWebSocket();
@@ -45,7 +50,6 @@ public class NPC1Behaviour : MonoBehaviour
         {
             Debug.LogError("WebSocket connection error: " + e.Message);
         }
-        inventory = inventoryManagerGameObject.GetComponent<InventoryManager>();
     }
     
     private void Update()
@@ -60,9 +64,12 @@ public class NPC1Behaviour : MonoBehaviour
         if (Input.GetButtonDown("Interact") && isInTriggerRange)
         {
             canvasObject.SetActive(true); 
-            if (inventory.itemPicked)
+            if (inventory.GetComponent<TMP_Text>().text.Contains("Gun") && inventory.GetComponent<TMP_Text>().text.Contains("Tablet"))
             {
-                SendUserMessage("Here, I got your gun back");
+                SendUserMessage("Here, I got your stuff back");
+                initiateMission = false;
+                inventory.GetComponent<TMP_Text>().text = "";
+                guestList.GetComponent<TMP_Text>().text = "All guests done";
             }
             else
             {
@@ -74,15 +81,22 @@ public class NPC1Behaviour : MonoBehaviour
         }
         if (initiateMission)
         {
-            if (inventory.itemPicked)
+            print(inventory.GetComponent<TMP_Text>().text);
+            if (inventory.GetComponent<TMP_Text>().text.Contains("Gun") && inventory.GetComponent<TMP_Text>().text.Contains("Tablet"))
             {
-                inventory.GetComponent<TMP_Text>().text = "Deliver Jhon's gun back";
-                gun.SetActive(false);
+                guestList.GetComponent<TMP_Text>().text = "Deliver John's gun and tablet back";
             }
-            else
+            else if(inventory.GetComponent<TMP_Text>().text.Contains("Gun"))
             {
-                inventory.GetComponent<TMP_Text>().text = "Find Jhon's Gun";
-                gun.SetActive(true);
+                guestList.GetComponent<TMP_Text>().text = "Find John's Tablet";
+            }
+            else if(inventory.GetComponent<TMP_Text>().text.Contains("Tablet"))
+            {
+                guestList.GetComponent<TMP_Text>().text = "Find John's Gun";
+            }
+            else if (initiateMission)
+            {
+                guestList.GetComponent<TMP_Text>().text = "Find John's Gun And Tablet";
             }
 
         }
@@ -93,18 +107,18 @@ public class NPC1Behaviour : MonoBehaviour
     {   try
         {
             string finalInput = "";
-            if (!inventory.itemPicked)
+            if (!inventory.GetComponent<TMP_Text>().text.Contains("gun") && !inventory.GetComponent<TMP_Text>().text.Contains("tablet"))
             {
                 input.Select();
                 finalInput = input.text;
             }
-            else
+            else if (inventory.GetComponent<TMP_Text>().text.Contains("gun") && inventory.GetComponent<TMP_Text>().text.Contains("tablet"))
             {
                 finalInput = arg0;
-                inventory.itemPicked = false;
+                inventory.GetComponent<TMP_Text>().text = "";
             }
             //Send the input in the JSON format, store as a string, then converted to JSON
-            string jsonString = "{'player_name': 'player1','player_input':'" + finalInput + "', 'npc_data': {'npc_name': 'Jhon Doe','backstory': '','description': '','tasks': [{'description': 'Fetch my gun'}]}}";
+            string jsonString = "{'player_name': 'player1','player_input':'" + finalInput + "', 'npc_data': {'npc_name': 'John Silverhand','backstory': '','description': '','tasks': [{'description': 'Fetch my gun and my tablet'}]}}";
             jsonString = jsonString.Replace('\'', '\"');
             JObject jsonObject = JObject.Parse(jsonString);
 

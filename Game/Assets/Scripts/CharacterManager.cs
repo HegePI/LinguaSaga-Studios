@@ -11,16 +11,13 @@ public class CharacterMovement : MonoBehaviour
     bool slopeFlag = false;
     public GameObject canvasObject;
     private Animator animator;
-    public GameObject inventoryManagerGameObject;
-    private InventoryManager inventory;
 
+    public GameObject inventory;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         NPC1SpriteRenderer = GetComponent<SpriteRenderer>();
-        inventory = inventoryManagerGameObject.GetComponent<InventoryManager>();
-        inventory.GetComponent<TMP_Text>().text = inventory.objectiveText;
     }
 
     private void Update()
@@ -62,6 +59,7 @@ public class CharacterMovement : MonoBehaviour
                 animator.SetBool("isMoving", false);
             }
         }
+        
     }
     private void OnTriggerEnter2D(Collider2D Other)
     {
@@ -71,11 +69,24 @@ public class CharacterMovement : MonoBehaviour
         }
         if (Other.CompareTag("gun"))
         {
-            inventory.itemPicked = true;
-            if (inventory.itemPicked)
-                inventory.GetComponent<TMP_Text>().text += "\nGun";
+            if(inventory.GetComponent<TMP_Text>().text == ""){
+                inventory.GetComponent<TMP_Text>().text = "Inventory: ";
+            }
+            inventory.GetComponent<TMP_Text>().text += "\nGun";
+            Other.gameObject.SetActive(false);
         }
+        if (Other.CompareTag("tablet"))
+        {
+            if(inventory.GetComponent<TMP_Text>().text == ""){
+                inventory.GetComponent<TMP_Text>().text = "Inventory: ";
+            }
+            inventory.GetComponent<TMP_Text>().text += "\nTablet";
+            Other.gameObject.SetActive(false);     
+        }
+
+
         
+            
     }
     private void OnTriggerExit2D(Collider2D Other)
     {
